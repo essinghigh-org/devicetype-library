@@ -1520,6 +1520,10 @@
 "module-types/Cisco"
 ],
 [
+"C3650-STACK",
+"module-types/Cisco"
+],
+[
 "C3850-NM-2-10G",
 "module-types/Cisco"
 ],
@@ -1644,6 +1648,10 @@
 "module-types/Cisco"
 ],
 [
+"C9200-FAN",
+"module-types/Cisco"
+],
+[
 "C9200-NM-2Q",
 "module-types/Cisco"
 ],
@@ -1677,6 +1685,14 @@
 ],
 [
 "C9300-NM-8X",
+"module-types/Cisco"
+],
+[
+"C9300L-STACK",
+"module-types/Cisco"
+],
+[
+"C9300L-STACK-A",
 "module-types/Cisco"
 ],
 [
@@ -2906,6 +2922,10 @@
 [
 "FAN-DM4615",
 "module-types/Datacom"
+],
+[
+"FAN-T1",
+"module-types/Cisco"
 ],
 [
 "FAN-T2",
