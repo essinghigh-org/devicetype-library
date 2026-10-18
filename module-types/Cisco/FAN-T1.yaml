@@ -1,0 +1,11 @@
+---
+manufacturer: Cisco
+model: FAN-T1
+part_number: FAN-T1
+profile: Fan
+comments: |
+  Field-replaceable fan module used by the Catalyst 3650 and the covered 3850 models. No RPM or wattage is inferred.
+
+  Sources:
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3650-series-switches/data_sheet-c78-729449.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/hardware/installation/guide/b_c3850_hig/b_c3850_hig_chapter_01.html

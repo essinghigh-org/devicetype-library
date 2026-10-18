@@ -1,0 +1,13 @@
+---
+manufacturer: Cisco
+model: C9300L-STACK-A
+part_number: C9300L-STACK-A
+comments: |
+  One Catalyst 9300L/9300LM StackWise-320 adapter for STACK-T3A cables. Used in C9300L-STACK-KIT2; C9300L support begins
+  with IOS XE 17.9.x. Use identical adapter types at both ends of a stack cable.
+
+  Sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig/connector-cable-specs.html
+interfaces:
+  - name: StackPort{module}
+    type: cisco-stackwise-320

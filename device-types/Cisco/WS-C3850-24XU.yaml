@@ -1,0 +1,174 @@
+---
+manufacturer: Cisco
+model: Catalyst 3850-24XU
+slug: cisco-ws-c3850-24xu
+part_number: WS-C3850-24XU
+u_height: 1
+is_full_depth: false
+weight: 8.0
+weight_unit: kg
+comments: |
+  Unsuffixed physical chassis identity; no LAN Base/IP Base/IP Services suffix is inferred.
+  24 access ports: 0 1G BASE-T and 24 multigigabit BASE-T. The uplink network module is optional and is represented by a
+  bay, not by preinstalled interfaces. Compatible network modules: C3850-NM-4-1G, C3850-NM-2-10G, C3850-NM-4-10G,
+  C3850-NM-8-10G, C3850-NM-2-40G. Default shipping PSU: PWR-C1-1100WAC; verify actual PSU population. Three FAN-T1 modules
+  and two fixed StackWise-480 data connectors. Weight is the vendor shipping configuration, including fans and one PSU,
+  excluding the uplink network module. PoE fields express the supported IEEE 802.3at mode; Cisco UPOE supplies up to 60 W
+  but is proprietary and must not be declared as IEEE 802.3bt. Bidirectional StackPower connectors are not modeled as
+  unilateral power inputs/outputs. No Loopback, VLAN, or other configuration-specific interfaces are created.
+
+  Sources:
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3850-series-switches/datasheet_c78-720918.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/hardware/installation/guide/b_c3850_hig/b_c3850_hig_chapter_01.html
+console-ports:
+  - name: con0
+    type: rj-45
+  - name: usb
+    type: usb-mini-b
+interfaces:
+  - name: GigabitEthernet0/0
+    type: 1000base-t
+    mgmt_only: true
+  - name: TenGigabitEthernet1/0/1
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/2
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/3
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/4
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/5
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/6
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/7
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/8
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/9
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/10
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/11
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/12
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/13
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/14
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/15
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/16
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/17
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/18
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/19
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/20
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/21
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/22
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/23
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/24
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: StackPort1/1
+    type: cisco-stackwise-480
+  - name: StackPort1/2
+    type: cisco-stackwise-480
+module-bays:
+  - name: Network Module
+    position: '1'
+    description: 'Optional uplink module: C3850-NM-4-1G, C3850-NM-2-10G, C3850-NM-4-10G, C3850-NM-8-10G, C3850-NM-2-40G'
+  - name: PS-A
+    position: A
+    description: Field-replaceable power supply; discover the installed PSU PID.
+  - name: PS-B
+    position: B
+    description: Field-replaceable power supply; may be unpopulated.
+  - name: FAN 1
+    position: FAN1
+    description: FAN-T1 field-replaceable fan module.
+  - name: FAN 2
+    position: FAN2
+    description: FAN-T1 field-replaceable fan module.
+  - name: FAN 3
+    position: FAN3
+    description: FAN-T1 field-replaceable fan module.

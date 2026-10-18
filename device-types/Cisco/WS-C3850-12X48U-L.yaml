@@ -5,9 +5,20 @@ slug: cisco-ws-c3850-12x48u-l
 part_number: WS-C3850-12X48U-L
 u_height: 1
 is_full_depth: false
+comments: |
+  LAN Base ordering variant: exactly 48 access ports, comprising 36 Gigabit and 12 multigigabit ports. Ports 37-48 are the
+  multigigabit ports; they are not twelve additional ports 1-12. IEEE 802.3at is represented by the PoE enum; proprietary
+  Cisco UPOE up to 60 W is an additional capability. Uplink modules and power supply population must be discovered
+  separately.
+
+  Sources:
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3850-series-switches/datasheet_c78-720918.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/hardware/installation/guide/b_c3850_hig/b_c3850_hig_chapter_01.html
 console-ports:
-  - name: Con 0
+  - name: con0
     type: rj-45
+  - name: usb
+    type: usb-mini-b
 interfaces:
   - name: GigabitEthernet0/0
     type: 1000base-t
@@ -16,218 +27,246 @@ interfaces:
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/2
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/3
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/4
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/5
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/6
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/7
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/8
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/9
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/10
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/11
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/12
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/13
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/14
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/15
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/16
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/17
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/18
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/19
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/20
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/21
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/22
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/23
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/24
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/25
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/26
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/27
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/28
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/29
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/30
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/31
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/32
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/33
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/34
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/35
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
   - name: GigabitEthernet1/0/36
     type: 1000base-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/37
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/37
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/38
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/38
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/39
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/39
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/40
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/40
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/41
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/41
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/42
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/42
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/43
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/43
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/44
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/44
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/45
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/45
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/46
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/46
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/47
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/47
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: GigabitEthernet1/0/48
-    type: 1000base-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: TenGigabitEthernet1/0/48
+    type: 10gbase-t
     poe_mode: pse
     poe_type: type2-ieee802.3at
-  - name: TenGigabitEthernet1/0/1
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/2
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/3
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/4
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/5
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/6
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/7
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/8
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/9
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/10
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/11
-    type: 10gbase-t
-  - name: TenGigabitEthernet1/0/12
-    type: 10gbase-t
+    description: IEEE 802.3at PoE+ and proprietary Cisco UPOE up to 60 W; UPOE is not an IEEE 802.3bt claim.
+  - name: StackPort1/1
+    type: cisco-stackwise-480
+  - name: StackPort1/2
+    type: cisco-stackwise-480
 module-bays:
   - name: Network Module
     position: '1'
@@ -235,3 +274,12 @@ module-bays:
     position: A
   - name: PS-B
     position: B
+  - name: FAN 1
+    position: FAN1
+    description: FAN-T1 field-replaceable fan module.
+  - name: FAN 2
+    position: FAN2
+    description: FAN-T1 field-replaceable fan module.
+  - name: FAN 3
+    position: FAN3
+    description: FAN-T1 field-replaceable fan module.

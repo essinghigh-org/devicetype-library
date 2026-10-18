@@ -1,0 +1,10 @@
+---
+manufacturer: Cisco
+model: C9200-FAN
+part_number: C9200-FAN
+profile: Fan
+comments: |
+  Field-replaceable fan module for modular-fan Catalyst C9200 chassis. C9200L uses fixed internal fans instead.
+
+  Sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/product_overview.html

@@ -1,0 +1,156 @@
+---
+manufacturer: Cisco
+model: Catalyst 9200-24PXG
+slug: cisco-c9200-24pxg
+part_number: C9200-24PXG
+u_height: 1
+is_full_depth: false
+weight: 5.15
+weight_unit: kg
+comments: |
+  24 PoE+ access ports: 16 10/100/1000 BASE-T and eight 100M/1G/2.5G/5G/10G multigigabit ports. Optional C9200-NM-4X,
+  C9200-NM-2Y or C9200-NM-2Q uplink module. Two PSU bays and two C9200-FAN field-replaceable fan modules. PWR-C5-600WAC
+  and PWR-C6-600WAC are documented AC supply options. StackWise-160 uses optional adapters supplied in C9200-STACK-KIT;
+  the two adapter bays are modeled without assuming installation. No individual stack-adapter module PID or active license
+  is inferred. Interface names follow IOS XE member-1 numbering; verify against interface inventory before updating
+  existing instances.
+
+  Sources:
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/product_overview.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/technical_specifications.html
+console-ports:
+  - name: con0
+    type: rj-45
+  - name: usb
+    type: usb-mini-b
+interfaces:
+  - name: GigabitEthernet0/0
+    type: 1000base-t
+    mgmt_only: true
+  - name: GigabitEthernet1/0/1
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/2
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/3
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/4
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/5
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/6
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/7
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/8
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/9
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/10
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/11
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/12
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/13
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/14
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/15
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: GigabitEthernet1/0/16
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: TenGigabitEthernet1/0/17
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/18
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/19
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/20
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/21
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/22
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/23
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+  - name: TenGigabitEthernet1/0/24
+    type: 10gbase-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Multigigabit 100M/1G/2.5G/5G/10G BASE-T port.
+module-bays:
+  - name: Network Module
+    position: '1'
+    description: Optional C9200-NM-4X, C9200-NM-2Y or C9200-NM-2Q.
+  - name: PS-A
+    position: A
+    description: Field-replaceable power supply; discover the installed PSU PID.
+  - name: PS-B
+    position: B
+    description: Field-replaceable power supply; may be unpopulated.
+  - name: FAN 1
+    position: FAN1
+    description: C9200-FAN field-replaceable fan module.
+  - name: FAN 2
+    position: FAN2
+    description: C9200-FAN field-replaceable fan module.
+  - name: Stack Adapter 1
+    position: 1/1
+    description: Optional StackWise-160 adapter from C9200-STACK-KIT; individual adapter PID not asserted.
+  - name: Stack Adapter 2
+    position: 1/2
+    description: Optional StackWise-160 adapter from C9200-STACK-KIT; individual adapter PID not asserted.

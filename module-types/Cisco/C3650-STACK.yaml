@@ -1,0 +1,14 @@
+---
+manufacturer: Cisco
+model: C3650-STACK
+part_number: C3650-STACK
+comments: |
+  One Catalyst 3650 StackWise-160 adapter. Install in an adapter bay positioned 1/1 or 1/2. C3650-STACK-KIT contains two
+  adapters plus one cable.
+
+  Sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/hardware/installation/guide/Cat3650hig_book/HIGINSTL.html
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-3650-series-switches/catalyst-3650-mini-eol.html
+interfaces:
+  - name: StackPort{module}
+    type: cisco-stackwise-160
