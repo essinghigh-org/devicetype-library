@@ -1,0 +1,47 @@
+---
+manufacturer: Cisco
+model: Meraki Z1
+slug: cisco-z1-hw
+u_height: 0
+is_full_depth: false
+part_number: Z1-HW
+weight: 408
+weight_unit: g
+interfaces:
+- name: Internet
+  type: 1000base-t
+- name: LAN 1
+  type: 1000base-t
+- name: LAN 2
+  type: 1000base-t
+- name: LAN 3
+  type: 1000base-t
+- name: LAN 4
+  type: 1000base-t
+- name: WLAN 2.4GHz
+  type: ieee802.11n
+  rf_role: ap
+  description: 2.4 GHz 2x2 MIMO radio
+- name: WLAN 5GHz
+  type: ieee802.11n
+  rf_role: ap
+  description: 5 GHz 2x2 MIMO radio
+power-ports:
+- name: DC input
+  type: other
+  description: 12 VDC input; supplied external adapter rated 1.5A
+module-bays:
+- name: USB modem
+  position: USB
+  description: USB 2.0 host for optional supported 3G/4G modem
+comments: 'Desktop/wall teleworker gateway with five Gigabit Ethernet ports and two simultaneous 802.11n radios. No PoE
+  output and no built-in cellular modem. Adapter output rating is not entered as measured device input draw.
+
+
+  Sources:
+
+
+  - [Meraki Z1 data sheet](https://meraki.cisco.com/lib/pdf/meraki_datasheet_z1.pdf)
+
+
+  - [MX and Z-series wireless settings](https://documentation.meraki.com/SASE_and_SD-WAN/Z-Series_Teleworker_Gateways/Design_and_Configure/MX_and_Z-Series_Wireless_Settings)'

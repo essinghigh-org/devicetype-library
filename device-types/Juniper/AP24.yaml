@@ -1,0 +1,39 @@
+---
+manufacturer: Juniper
+model: AP24
+slug: juniper-ap24
+u_height: 0
+is_full_depth: false
+airflow: passive
+weight: 0.75
+weight_unit: kg
+interfaces:
+- name: eth0
+  type: 2.5gbase-t
+  poe_mode: pd
+  poe_type: type1-ieee802.3af
+- name: wlan0
+  type: ieee802.11ax
+  description: 2.4 GHz OR 6 GHz client radio, 2x2:2; these bands are mutually exclusive
+  rf_role: ap
+- name: wlan1
+  type: ieee802.11ax
+  description: 5 GHz client radio, 2x2:2
+  rf_role: ap
+- name: scan0
+  type: other-wireless
+  description: Dedicated tri-band scanning radio
+- name: ble0
+  type: ieee802.15.1
+  description: BLE 5.3 IoT radio
+inventory-items:
+- name: USB port
+  description: USB 2.0 accessory interface; not asserted to be a serial console.
+comments: 'AP24 supports two client bands concurrently, not three. Datasheet states 802.3af supports full Wi-Fi functionality.
+  Wireless interface names are local template identifiers, not a claim about firmware interface names. No regional radio SKU,
+  channel plan, SSID or fitted antenna is assumed.
+
+
+  Sources:
+
+  https://www.juniper.net/gb/en/products/access-points/ap24-access-point-datasheet.html'

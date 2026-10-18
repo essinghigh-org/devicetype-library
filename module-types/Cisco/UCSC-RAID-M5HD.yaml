@@ -1,0 +1,12 @@
+---
+manufacturer: Cisco
+model: UCSC-RAID-M5HD
+part_number: UCSC-RAID-M5HD
+comments: '12G SAS modular RAID controller with 4 GB cache. Internal disk connectivity is not represented as Ethernet
+  interfaces.
+
+
+  Sources:
+
+
+  - [Cisco UC on UCS appliance replacement BOMs](https://www.cisco.com/c/en/us/support/docs/unified-communications/business-edition-7000/223082-uc-on-ucs-hardware-replacement-for.html)'

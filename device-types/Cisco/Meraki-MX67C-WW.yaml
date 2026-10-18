@@ -1,0 +1,53 @@
+---
+manufacturer: Cisco
+model: Meraki MX67C-WW
+slug: cisco-mx67c-hw-ww
+u_height: 0
+is_full_depth: false
+part_number: MX67C-HW-WW
+weight: 0.85
+weight_unit: kg
+interfaces:
+- name: Internet
+  type: 1000base-t
+  description: Dedicated WAN port
+- name: LAN 1
+  type: 1000base-t
+  description: LAN port; one LAN port can be reassigned as secondary WAN
+- name: LAN 2
+  type: 1000base-t
+  description: LAN port; one LAN port can be reassigned as secondary WAN
+- name: LAN 3
+  type: 1000base-t
+  description: LAN port; one LAN port can be reassigned as secondary WAN
+- name: LAN 4
+  type: 1000base-t
+  description: LAN port; one LAN port can be reassigned as secondary WAN
+- name: Cellular
+  type: lte
+  description: Integrated LTE modem; worldwide hardware frequency bands
+power-ports:
+- name: DC input
+  type: other
+  maximum_draw: 17
+  description: External Meraki DC adapter; no IEC mains inlet on appliance
+module-bays:
+- name: USB modem
+  position: USB
+  description: USB host for optional supported external cellular modem
+inventory-items:
+- name: Cellular antenna 1
+  description: External LTE antenna connector
+- name: Cellular antenna 2
+  description: External LTE antenna connector
+comments: 'Worldwide cellular hardware variant. Desktop/wall chassis has an external DC adapter. Existing upstream Meraki-MX67C
+  has an incorrect 1RU/C14 power representation, so it is not used. This C model has LTE, not integrated Wi-Fi.
+
+
+  Sources:
+
+
+  - [Meraki MX67/MX68 data sheet](https://documentation.meraki.com/MX/MX_Overviews_and_Specifications/MX67_and_MX68_Datasheet)
+
+
+  - [Meraki cellular hardware identifiers](https://documentation.meraki.com/SASE_and_SD-WAN/Cellular/Design_and_Configure/Configuration_Guides/MG___MX%2F%2FZ_Cellular_TAC_Range)'

@@ -1,0 +1,16 @@
+---
+manufacturer: HPE
+model: HPE A58x0AF 650W DC Power Supply
+part_number: JC681A
+comments: |
+  650W DC output PSU, -40 to -60V DC input.
+  The PSU uses the vendor detachable DC power connector/cable; other avoids guessing a NetBox connector enum.
+  Output wattage is not declared as AC/DC input draw.
+
+  Sources:
+  - [HPE A58x0AF 650W AC/DC Power Supplies User Guide](https://support.hpe.com/hpesc/public/api/document/c03014360)
+  - [HPE PartSurfer JH179A](https://partsurfer.hpe.com/Search.aspx?SearchText=JH179A)
+power-ports:
+  - name: PS{module}
+    type: other
+    description: Vendor DC power connector; confirm connector/cable on the fitted PSU.

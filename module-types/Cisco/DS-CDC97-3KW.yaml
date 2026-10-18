@@ -1,0 +1,15 @@
+---
+manufacturer: Cisco
+model: DS-CDC97-3KW
+part_number: DS-CDC97-3KW
+power-ports:
+- name: PSU{module}
+  type: dc-terminal
+  description: Nominal3kW DC power-supply option; input requirements depend on module specification.
+comments: 'DC power option. Do not install unless exact PSU PID is present in inventory.
+
+
+  Sources:
+
+
+  - [MDS 9706 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9706-multilayer-director/datasheet-c78-731478.html)'

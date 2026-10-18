@@ -1,0 +1,14 @@
+---
+manufacturer: Cisco
+model: DS-C96S-FAN-E
+part_number: DS-C96S-FAN-E
+comments: 'Port-side-exhaust MDS 9396S fan module; two physical fans per module.
+
+
+  Sources:
+
+
+  - [MDS 9396S data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9396s-16g-multilayer-fabric-switch/datasheet-c78-734525.html)
+
+
+  - [MDS 9396S hardware overview](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/9396S/installation/guide/b_mds9396_hardware_install_guide/overview.html)'

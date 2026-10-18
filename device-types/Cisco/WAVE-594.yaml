@@ -1,0 +1,75 @@
+---
+manufacturer: Cisco
+model: WAVE-594
+slug: cisco-wave-594-k9
+u_height: 1
+is_full_depth: true
+part_number: WAVE-594-K9
+interfaces:
+- name: GigabitEthernet0/0
+  type: 1000base-t
+- name: GigabitEthernet0/1
+  type: 1000base-t
+console-ports:
+- name: console
+  type: rj-45
+- name: USB console
+  type: usb-mini-b
+module-bays:
+- name: I/O module
+  position: '1'
+  description: Optional WAVE network interface module
+- name: PSU0
+  position: '0'
+  description: Removable AC supply
+- name: PSU1
+  position: '1'
+  description: Removable AC supply
+- name: Disk0
+  position: '0'
+  description: Front removable drive bay
+- name: Disk1
+  position: '1'
+  description: Front removable drive bay
+- name: Fan1
+  position: '1'
+  description: Rear 40 mm fan module
+- name: Fan2
+  position: '2'
+  description: Rear 40 mm fan module
+- name: Fan3
+  position: '3'
+  description: Rear 40 mm fan module
+- name: Fan4
+  position: '4'
+  description: Rear 40 mm fan module
+- name: Fan5
+  position: '5'
+  description: Rear 40 mm fan module
+- name: Fan6
+  position: '6'
+  description: Rear 40 mm fan module
+inventory-items:
+- name: USB host
+  description: Storage/host USB connector; distinct from mini-USB serial console
+comments: '1RU appliance, 516 mm depth. Two fixed Gigabit interfaces; optional module interfaces appear only after module
+  installation. Two disk and PSU positions, six fan positions. Network modules and any replacement parts must be selected
+  from actual inventory; no interface card assumed.
+
+
+  Sources:
+
+
+  - [Cisco WAVE data sheet](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/data_sheet_c78-685554.html)
+
+
+  - [WAVE 594/694 hardware installation guide](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG.pdf)
+
+
+  - [WAVE 594/694 specifications](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG/594spec.pdf)
+
+
+  - [WAAS interface naming](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/waas/v531/configuration/guide/cnfg/network.pdf)
+
+
+  - [WAVE part-number list](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/eos-eol-notice-c51-739730.html)'

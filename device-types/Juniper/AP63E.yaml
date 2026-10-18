@@ -1,0 +1,48 @@
+---
+manufacturer: Juniper
+model: AP63E
+slug: juniper-ap63e
+u_height: 0
+is_full_depth: false
+airflow: passive
+weight: 3.9
+weight_unit: kg
+interfaces:
+- name: eth0
+  type: 2.5gbase-t
+  poe_mode: pd
+  poe_type: type3-ieee802.3bt
+  description: 802.3at also powers AP; 802.3bt required to enable eth1 PoE output.
+- name: eth1
+  type: 1000base-t
+  poe_mode: pse
+  poe_type: type1-ieee802.3af
+  description: Optional PSE operation requires 802.3bt input on eth0.
+- name: wlan0
+  type: ieee802.11ax
+  description: 2.4 GHz client radio, 4x4:4
+  rf_role: ap
+- name: wlan1
+  type: ieee802.11ax
+  description: 5 GHz client radio, 4x4:4
+  rf_role: ap
+- name: scan0
+  type: other-wireless
+  description: Dedicated dual-band 2x2 scanning radio
+- name: ble0
+  type: ieee802.15.1
+  description: Bluetooth 5.0 with vBLE array
+inventory-items:
+- name: External antenna connectors
+  description: 'Six N-type female sockets: four dual-band client-radio and two dual-band scanning-radio sockets. Fitted antennas
+    are not assumed.'
+comments: 'Outdoor external antenna model, IP67/NEMA 4. Antenna sockets are documented as inventory; no fictitious passive
+  paths or radio-to-socket mapping is asserted. Wireless interface names are local template identifiers, not a claim about
+  firmware interface names. No regional radio SKU, channel plan, SSID or fitted antenna is assumed.
+
+
+  Sources:
+
+  https://www.juniper.net/us/en/products/access-points/ap63-access-point-datasheet.html
+
+  https://www.juniper.net/documentation/us/en/hardware/ap63/topics/reference/ap63-components.html'

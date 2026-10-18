@@ -1,0 +1,48 @@
+---
+manufacturer: Cisco
+model: Catalyst 9115AXE-E
+slug: cisco-c9115axe-e
+u_height: 0
+is_full_depth: false
+part_number: C9115AXE-E
+weight: 1.1
+weight_unit: kg
+interfaces:
+- name: GigabitEthernet0
+  type: 2.5gbase-t
+  poe_mode: pd
+  poe_type: type2-ieee802.3at
+- name: Dot11Radio0
+  type: ieee802.11ax
+  description: 2.4 GHz client radio
+- name: Dot11Radio1
+  type: ieee802.11ax
+  description: 5 GHz client radio
+- name: Bluetooth
+  type: ieee802.15.1
+  description: Integrated Bluetooth Low Energy 5.0 radio
+console-ports:
+- name: console
+  type: rj-45
+inventory-items:
+- name: USB host
+  description: USB2.0 host connector
+- name: Antenna A
+  description: External dual-band RP-TNC antenna connector
+- name: Antenna B
+  description: External dual-band RP-TNC antenna connector
+- name: Antenna C
+  description: External dual-band RP-TNC antenna connector
+- name: Antenna D
+  description: External dual-band RP-TNC antenna connector
+comments: 'AXE external-antenna model is not interchangeable with upstream AXI. Antenna sockets are inventory items because
+  schema connector choices do not encode RP-TNC. USB is a host port.
+
+
+  Sources:
+
+
+  - [Catalyst 9115 data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-741988.html)
+
+
+  - [C9115AX Getting Started Guide](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9115ax/quick/guide/ap9115ax-getstart.html)'

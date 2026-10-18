@@ -3,19 +3,31 @@ manufacturer: Cisco
 model: EPA-10X10GE
 part_number: EPA-10X10GE
 interfaces:
-  - name: TenGigabitEthernet{module}/0
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/1
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/2
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/3
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/4
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/5
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/6
-    type: 10gbase-x-sfpp
-  - name: TenGigabitEthernet{module}/7
-    type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/0
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/1
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/2
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/3
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/4
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/5
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/6
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/7
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/8
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet0/{module}/9
+  type: 10gbase-x-sfpp
+comments: 'Optional EPA for C9800-80 Bay 1. Fixed Bay 0 interfaces remain on the chassis. Validate controller software/optics
+  support and the installed PID before using this module.
+
+
+  Sources:
+
+
+  - [Catalyst 9800-80 supported hardware components](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/9800-80/installation-guide/b-wlc-ig-9800-80/supported-hardware-components.html)'

@@ -1,0 +1,27 @@
+---
+manufacturer: Cisco
+model: WAVE-INLN-GE-4T
+part_number: WAVE-INLN-GE-4T
+interfaces:
+- name: GigabitEthernet{module}/0
+  type: 1000base-t
+- name: GigabitEthernet{module}/1
+  type: 1000base-t
+- name: GigabitEthernet{module}/2
+  type: 1000base-t
+- name: GigabitEthernet{module}/3
+  type: 1000base-t
+comments: 'Installed module ports substitute bay position 1. Physical ports are separate interfaces; inline bypass pairing
+  is operational configuration.
+
+
+  Sources:
+
+
+  - [Cisco WAVE data sheet](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/data_sheet_c78-685554.html)
+
+
+  - [WAVE 594/694 specifications](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG/594spec.pdf)
+
+
+  - [WAAS interface naming](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/waas/v531/configuration/guide/cnfg/network.pdf)'

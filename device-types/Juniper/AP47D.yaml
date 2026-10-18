@@ -1,0 +1,53 @@
+---
+manufacturer: Juniper
+model: AP47D
+slug: juniper-ap47d
+u_height: 0
+is_full_depth: false
+airflow: passive
+weight: 2.0
+weight_unit: kg
+interfaces:
+- name: eth0
+  type: 10gbase-t
+  poe_mode: pd
+  poe_type: type3-ieee802.3bt
+- name: eth1
+  type: 10gbase-t
+  poe_mode: pd
+  poe_type: type3-ieee802.3bt
+- name: wlan0
+  type: ieee802.11be
+  description: Configurable 2.4/5/6 GHz client radio, 4x4:4
+  rf_role: ap
+- name: wlan1
+  type: ieee802.11be
+  description: 5 GHz client radio, 4x4:4
+  rf_role: ap
+- name: wlan2
+  type: ieee802.11be
+  description: 6 GHz client radio, 4x4:4
+  rf_role: ap
+- name: scan0
+  type: other-wireless
+  description: Dedicated 2.4/5/6 GHz scanning radio
+- name: iot0
+  type: ieee802.15.4
+  description: Multipersonality IEEE 802.15.4/Bluetooth radio 1
+- name: iot1
+  type: ieee802.15.4
+  description: Multipersonality IEEE 802.15.4/Bluetooth radio 2
+- name: uwb0
+  type: other-wireless
+  description: Ultra-wideband ranging radio
+inventory-items:
+- name: USB port
+  description: USB 2.0 accessory interface; not asserted to be a serial console.
+comments: 'AP47D has internal directional antennas; upstream AP47 is the omnidirectional model. Class 6 is IEEE 802.3bt Type
+  3. Wireless interface names are local template identifiers, not a claim about firmware interface names. No regional radio
+  SKU, channel plan, SSID or fitted antenna is assumed.
+
+
+  Sources:
+
+  https://www.juniper.net/gb/en/products/access-points/ap47-access-point-datasheet.html'

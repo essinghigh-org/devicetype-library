@@ -1,0 +1,140 @@
+---
+manufacturer: HPE
+model: ProCurve 2910al-24G-PoE+
+slug: hpe-procurve-2910al-24g-poep
+part_number: J9146A
+u_height: 1
+is_full_depth: false
+comments: |
+  The input drops the plus sign from the vendor PoE+ product name.
+  Ports 21-24 are shared dual-personality logical ports (RJ45 or SFP); these templates use copper by default.
+  When SFP is selected, change that existing interface media type; do not create additional independent 21-24 interfaces.
+  A and B are removable two-port uplink bays. Select J9008A, J9149A or a single J9165A kit module after checking inventory.
+  RPS and EPS are proprietary external power connectors, represented as other rather than falsely as ordinary terminal blocks.
+  USB Type-A auxiliary host is not a console connector.
+
+  Sources:
+  - [HPE 2910al standard models](https://support.hpe.com/hpesc/public/docDisplay?docId=c01844372&docLocale=en_US)
+  - [HPE 2910al system views](https://support.hpe.com/hpesc/public/docDisplay?docId=c01844385&docLocale=en_US)
+  - [HPE PartSurfer J9146](https://partsurfer.hpe.com/WSearch.aspx?Wchar=Y&searchText=J9146)
+  - [HPE 2910al product features](https://support.hpe.com/hpesc/public/docDisplay?docId=c01844319&docLocale=en_US&page=GUID-4E05DFD3-D00F-40A9-B620-2D6082B14876.html)
+console-ports:
+  - name: Console
+    type: rj-45
+power-ports:
+  - name: PS1
+    type: iec-60320-c14
+  - name: RPS
+    type: other
+    description: Proprietary 12V redundant system power input.
+  - name: EPS
+    type: other
+    description: Proprietary external PoE+ power input.
+interfaces:
+  - name: '1'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '2'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '3'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '4'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '5'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '6'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '7'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '8'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '9'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '10'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '11'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '12'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '13'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '14'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '15'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '16'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '17'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '18'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '19'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '20'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+  - name: '21'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Dual-personality RJ45/SFP logical port; select one medium.
+  - name: '22'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Dual-personality RJ45/SFP logical port; select one medium.
+  - name: '23'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Dual-personality RJ45/SFP logical port; select one medium.
+  - name: '24'
+    type: 1000base-t
+    poe_mode: pse
+    poe_type: type2-ieee802.3at
+    description: Dual-personality RJ45/SFP logical port; select one medium.
+module-bays:
+  - name: A
+    position: A
+    description: Optional al uplink module.
+  - name: B
+    position: B
+    description: Optional al uplink module.

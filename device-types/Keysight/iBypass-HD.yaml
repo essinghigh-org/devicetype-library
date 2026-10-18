@@ -1,0 +1,47 @@
+---
+manufacturer: Keysight
+model: iBypass HD
+slug: keysight-ibypass-hd
+u_height: 1
+is_full_depth: true
+interfaces:
+- name: Management
+  type: 1000base-t
+  mgmt_only: true
+console-ports:
+- name: Console
+  type: rj-45
+module-bays:
+- name: DBM 1
+  position: '1'
+  description: Dual Bypass Module. DBM-100 copper, DBM-200/250 SX, or DBM-300 LX.
+- name: DBM 2
+  position: '2'
+  description: Dual Bypass Module. DBM-100 copper, DBM-200/250 SX, or DBM-300 LX.
+- name: DBM 3
+  position: '3'
+  description: Dual Bypass Module. DBM-100 copper, DBM-200/250 SX, or DBM-300 LX.
+- name: DBM 4
+  position: '4'
+  description: Dual Bypass Module. DBM-100 copper, DBM-200/250 SX, or DBM-300 LX.
+- name: PSU1
+  position: PSU1
+  description: Replaceable AC or -48VDC supply; input label does not identify power option.
+- name: PSU2
+  position: PSU2
+  description: Replaceable AC or -48VDC supply; input label does not identify power option.
+- name: Fan tray
+  position: FAN1
+  description: One replaceable tray containing four cooling fans.
+comments: 'Original Net Optics/Ixia iBypass HD chassis, normalized to Keysight. Four DBM bays support up to eight
+  1G bypass segments. Generic name does not distinguish IBP-8000 AC from IBP-8000-DC. The port layout is represented
+  on the module templates, never guessed as fully populated chassis interfaces. Select fitted DBM media and power
+  option from inventory. The VHD/10G module family is not interchangeable with these 1G HD DBMs. No standalone PSU
+  model is fabricated because an exact spare PID was not verified.
+
+
+  Sources:
+
+  https://manualzilla.com/doc/6924007/install-guide
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/iBypass.html'

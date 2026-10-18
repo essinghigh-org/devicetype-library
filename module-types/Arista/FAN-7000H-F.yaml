@@ -1,0 +1,11 @@
+---
+manufacturer: Arista
+model: FAN-7000H-F
+part_number: FAN-7000H-F
+airflow: front-to-rear
+comments: |
+  Field-replaceable fan module. Select only for a chassis whose compatibility list includes this exact module.
+  No fitted-module count is implied by this module template.
+
+  Sources:
+  - [Arista 7280R datasheet](https://www.arista.com/assets/data/pdf/Datasheets/7280R-DataSheet.pdf)

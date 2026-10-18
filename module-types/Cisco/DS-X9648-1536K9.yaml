@@ -1,0 +1,112 @@
+---
+manufacturer: Cisco
+model: DS-X9648-1536K9
+part_number: DS-X9648-1536K9
+interfaces:
+- name: fc{module}/1
+  type: 32gfc-sfpp
+- name: fc{module}/2
+  type: 32gfc-sfpp
+- name: fc{module}/3
+  type: 32gfc-sfpp
+- name: fc{module}/4
+  type: 32gfc-sfpp
+- name: fc{module}/5
+  type: 32gfc-sfpp
+- name: fc{module}/6
+  type: 32gfc-sfpp
+- name: fc{module}/7
+  type: 32gfc-sfpp
+- name: fc{module}/8
+  type: 32gfc-sfpp
+- name: fc{module}/9
+  type: 32gfc-sfpp
+- name: fc{module}/10
+  type: 32gfc-sfpp
+- name: fc{module}/11
+  type: 32gfc-sfpp
+- name: fc{module}/12
+  type: 32gfc-sfpp
+- name: fc{module}/13
+  type: 32gfc-sfpp
+- name: fc{module}/14
+  type: 32gfc-sfpp
+- name: fc{module}/15
+  type: 32gfc-sfpp
+- name: fc{module}/16
+  type: 32gfc-sfpp
+- name: fc{module}/17
+  type: 32gfc-sfpp
+- name: fc{module}/18
+  type: 32gfc-sfpp
+- name: fc{module}/19
+  type: 32gfc-sfpp
+- name: fc{module}/20
+  type: 32gfc-sfpp
+- name: fc{module}/21
+  type: 32gfc-sfpp
+- name: fc{module}/22
+  type: 32gfc-sfpp
+- name: fc{module}/23
+  type: 32gfc-sfpp
+- name: fc{module}/24
+  type: 32gfc-sfpp
+- name: fc{module}/25
+  type: 32gfc-sfpp
+- name: fc{module}/26
+  type: 32gfc-sfpp
+- name: fc{module}/27
+  type: 32gfc-sfpp
+- name: fc{module}/28
+  type: 32gfc-sfpp
+- name: fc{module}/29
+  type: 32gfc-sfpp
+- name: fc{module}/30
+  type: 32gfc-sfpp
+- name: fc{module}/31
+  type: 32gfc-sfpp
+- name: fc{module}/32
+  type: 32gfc-sfpp
+- name: fc{module}/33
+  type: 32gfc-sfpp
+- name: fc{module}/34
+  type: 32gfc-sfpp
+- name: fc{module}/35
+  type: 32gfc-sfpp
+- name: fc{module}/36
+  type: 32gfc-sfpp
+- name: fc{module}/37
+  type: 32gfc-sfpp
+- name: fc{module}/38
+  type: 32gfc-sfpp
+- name: fc{module}/39
+  type: 32gfc-sfpp
+- name: fc{module}/40
+  type: 32gfc-sfpp
+- name: fc{module}/41
+  type: 32gfc-sfpp
+- name: fc{module}/42
+  type: 32gfc-sfpp
+- name: fc{module}/43
+  type: 32gfc-sfpp
+- name: fc{module}/44
+  type: 32gfc-sfpp
+- name: fc{module}/45
+  type: 32gfc-sfpp
+- name: fc{module}/46
+  type: 32gfc-sfpp
+- name: fc{module}/47
+  type: 32gfc-sfpp
+- name: fc{module}/48
+  type: 32gfc-sfpp
+comments: '48 physical 32G FC cages. Slot number is substituted for{module}. Verify fabric/supervisor compatibility for
+  software release and performance.
+
+
+  Sources:
+
+
+  - [MDS 9700 hardware quick reference](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9700-series-multilayer-directors/guide-c07-738795.pdf)
+
+
+  - [MDS 9700 hardware overview](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/hw/9700/cisco-mds-9700-switching-module-installation-guide/product-overview.html)'

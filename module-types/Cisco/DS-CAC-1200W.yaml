@@ -1,0 +1,19 @@
+---
+manufacturer: Cisco
+model: DS-CAC-1200W
+part_number: DS-CAC-1200W
+power-ports:
+- name: PSU{module}
+  type: iec-60320-c14
+  description: AC PSU; nominal 1200 W output. Match fan direction and installed PSU SKU.
+comments: 'Vendor lists this as the bi-directional power-supply option. Exact airflow installation must match chassis
+  fans.
+
+
+  Sources:
+
+
+  - [MDS 9396S data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9396s-16g-multilayer-fabric-switch/datasheet-c78-734525.html)
+
+
+  - [MDS 9396S technical specifications](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/9396S/installation/guide/b_mds9396_hardware_install_guide/techspec.html)'

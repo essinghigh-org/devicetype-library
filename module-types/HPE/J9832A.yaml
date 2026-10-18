@@ -1,0 +1,9 @@
+---
+manufacturer: HPE
+model: J9832A
+part_number: J9832A
+comments: |
+  Replacement fan tray for the 7U 5412R zl2 chassis. Install one only when confirmed in inventory.
+
+  Sources:
+  - [HPE PartSurfer J9822A](https://partsurfer.hpe.com/Search.aspx?SearchText=J9822A)

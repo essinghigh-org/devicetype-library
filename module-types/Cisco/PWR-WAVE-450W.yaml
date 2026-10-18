@@ -1,0 +1,22 @@
+---
+manufacturer: Cisco
+model: PWR-WAVE-450W
+part_number: PWR-WAVE-450W
+power-ports:
+- name: PSU{module}
+  type: other
+  description: AC supply, 450 W output; system technical specification gives 530 W maximum AC input.
+comments: 'Removable WAVE 594/694 AC supply. Connector subtype remains other because a primary textual inlet specification
+  was not found; verify before cable automation. Output capability is not copied as maximum input draw.
+
+
+  Sources:
+
+
+  - [WAVE 594/694 hardware installation guide](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG.pdf)
+
+
+  - [WAVE 594/694 specifications](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG/594spec.pdf)
+
+
+  - [WAVE part-number list](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/eos-eol-notice-c51-739730.html)'

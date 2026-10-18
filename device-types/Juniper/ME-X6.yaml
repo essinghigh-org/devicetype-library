@@ -1,0 +1,66 @@
+---
+manufacturer: Juniper
+model: ME-X6
+slug: juniper-me-x6
+part_number: ME-X6
+u_height: 1
+is_full_depth: true
+interfaces:
+- name: xge0
+  type: 25gbase-x-sfp28
+- name: xge1
+  type: 25gbase-x-sfp28
+- name: xge2
+  type: 25gbase-x-sfp28
+- name: xge3
+  type: 25gbase-x-sfp28
+- name: mgmt0
+  type: 25gbase-x-sfp28
+  label: MIST
+  mgmt_only: true
+  description: Mist out-of-band management; physical port labelled MIST.
+- name: mgmt1
+  type: 25gbase-x-sfp28
+  mgmt_only: true
+  enabled: false
+  description: Additional physical management port; do not assume configured or supported for traffic.
+- name: mgmt2
+  type: 25gbase-x-sfp28
+  mgmt_only: true
+  enabled: false
+  description: Additional physical management port; do not assume configured or supported for traffic.
+- name: mgmt3
+  type: 25gbase-x-sfp28
+  mgmt_only: true
+  enabled: false
+  description: Additional physical management port; do not assume configured or supported for traffic.
+- name: iDRAC
+  type: other
+  mgmt_only: true
+  description: Dedicated RJ45 iDRAC Ethernet port; cited Juniper hardware guide does not specify its link speed.
+console-ports:
+- name: Serial
+  type: other
+  description: 'Connector differs by chassis revision: DE-9 on variant 1; smaller serial connector on variant 2. Verify chassis
+    before cabling.'
+module-bays:
+- name: PSU1
+  position: '1'
+  description: Hot-plug 800 W AC PSU bay.
+- name: PSU2
+  position: '2'
+  description: Hot-plug 800 W AC PSU bay.
+comments: 'Applies to common network and PSU topology of ME-X6 variants 1 and 2. Serial connector, display, USB, dry-contact
+  port, weight and draw differ by variant. Two PSU modules are instantiated separately. Data ports follow Mist labels; management
+  ports use descriptive names because Linux interface names vary by OS release. iDRAC link speed is left unspecified.
+
+
+  Sources:
+
+  https://www.juniper.net/documentation/us/en/hardware/me-x6/topics/concept/me-x6-chassis.html
+
+  https://www.juniper.net/documentation/us/en/software/mist/mist-edge-guide/mist-edge/topics/topic-map/getting-started.html
+
+  https://www.juniper.net/documentation/us/en/hardware/me-x6/topics/reference/me-x6-specifications.html
+
+  https://www.juniper.net/us/en/products/access-points/juniper-edge-datasheet.html'

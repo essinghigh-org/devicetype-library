@@ -1,0 +1,37 @@
+---
+manufacturer: Cisco
+model: Catalyst 9105AXI-G
+slug: cisco-c9105axi-g
+u_height: 0
+is_full_depth: false
+part_number: C9105AXI-G
+weight: 329.5
+weight_unit: g
+interfaces:
+- name: GigabitEthernet0
+  type: 1000base-t
+  poe_mode: pd
+  poe_type: type1-ieee802.3af
+- name: Dot11Radio0
+  type: ieee802.11ax
+  description: 2.4 GHz client radio
+- name: Dot11Radio1
+  type: ieee802.11ax
+  description: 5 GHz client radio
+- name: Bluetooth
+  type: ieee802.15.1
+  description: Integrated BLE radio
+console-ports:
+- name: console
+  type: rj-45
+comments: 'Exact G regulatory domain. Vendor hardware guide shows RJ45 console only; the extra mini-USB console in the
+  upstream E-domain definition is not carried over.
+
+
+  Sources:
+
+
+  - [Catalyst 9105 data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/datasheet-c78-744062.html)
+
+
+  - [C9105AXI Getting Started Guide](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9105ax/quick/guide/ap9105axi-getstart.html)'

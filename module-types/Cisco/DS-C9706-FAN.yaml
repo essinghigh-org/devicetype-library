@@ -1,0 +1,14 @@
+---
+manufacturer: Cisco
+model: DS-C9706-FAN
+part_number: DS-C9706-FAN
+comments: 'MDS 9706 fan tray; install only in its three fan positions. Front-to-back chassis airflow.
+
+
+  Sources:
+
+
+  - [MDS 9700 hardware overview](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/hw/9700/cisco-mds-9700-switching-module-installation-guide/product-overview.html)
+
+
+  - [MDS 9000 compatibility matrix](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/sw/9x/compatibility-matrix/cisco-mds-9000-nx-os-compatibility-matrix-9x.html)'

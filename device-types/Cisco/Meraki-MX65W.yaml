@@ -1,0 +1,79 @@
+---
+manufacturer: Cisco
+model: Meraki MX65W
+slug: cisco-mx65w-hw
+u_height: 0
+is_full_depth: false
+part_number: MX65W-HW
+weight: 0.7
+weight_unit: kg
+interfaces:
+- name: Internet 1
+  type: 1000base-t
+  description: Dedicated WAN port
+- name: Internet 2
+  type: 1000base-t
+  description: Dedicated WAN port
+- name: LAN 1
+  type: 1000base-t
+- name: LAN 2
+  type: 1000base-t
+- name: LAN 3
+  type: 1000base-t
+- name: LAN 4
+  type: 1000base-t
+- name: LAN 5
+  type: 1000base-t
+- name: LAN 6
+  type: 1000base-t
+- name: LAN 7
+  type: 1000base-t
+- name: LAN 8
+  type: 1000base-t
+- name: LAN 9
+  type: 1000base-t
+  poe_mode: pse
+  poe_type: type2-ieee802.3at
+  description: PoE+ LAN port; up to 30 W
+- name: LAN 10
+  type: 1000base-t
+  poe_mode: pse
+  poe_type: type2-ieee802.3at
+  description: PoE+ LAN port; up to 30 W
+- name: WLAN 2.4GHz
+  type: ieee802.11n
+  rf_role: ap
+  description: 2.4 GHz client-access radio
+- name: WLAN 5GHz
+  type: ieee802.11ac
+  rf_role: ap
+  description: 5 GHz 802.11ac wave 1 radio
+inventory-items:
+- name: Antenna 1
+  description: External dual-band RP-SMA Wi-Fi antenna connector
+- name: Antenna 2
+  description: External dual-band RP-SMA Wi-Fi antenna connector
+power-ports:
+- name: DC input
+  type: other
+  maximum_draw: 79
+  description: External MA-PWR-90WAC adapter; device-side DC connector
+module-bays:
+- name: USB modem
+  position: USB
+  description: USB 2.0 host for optional supported cellular modem; no modem assumed installed
+comments: 'Desktop/wall appliance. Two WAN plus ten LAN ports total; two of the ten LAN ports provide PoE+. Installation-guide
+  count resolves ambiguous datasheet prose. LAN labels are a local inventory convention, ordered from ordinary LAN ports
+  to the two PoE ports. No integrated cellular modem.
+
+
+  Sources:
+
+
+  - [Meraki MX64/MX65 data sheet](https://documentation.meraki.com/SASE_and_SD-WAN/MX/Product_Information/Overviews_and_Datasheets/MX64_and_MX65_Datasheet)
+
+
+  - [MX65W installation guide](https://documentation.meraki.com/SASE_and_SD-WAN/MX/Install_and_Get_Started/Installation_Guides/MX65W_Installation_Guide)
+
+
+  - [MX and Z-series wireless settings](https://documentation.meraki.com/SASE_and_SD-WAN/Z-Series_Teleworker_Gateways/Design_and_Configure/MX_and_Z-Series_Wireless_Settings)'

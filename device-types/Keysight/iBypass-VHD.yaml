@@ -1,0 +1,52 @@
+---
+manufacturer: Keysight
+model: iBypass VHD
+slug: keysight-ibypass-vhd
+u_height: 1
+is_full_depth: true
+interfaces:
+- name: eth0
+  type: other
+  label: Management
+  mgmt_only: true
+  description: RJ45 Ethernet management. Maximum physical speed was not stated in the accessible vendor installation
+    guide.
+console-ports:
+- name: Console
+  type: rj-45
+module-bays:
+- name: Module 1
+  position: '1'
+  description: IM-21-BYP or TAA IM-21-BYP-T, sixteen SFP+ sockets, four bypass segments.
+- name: Module 2
+  position: '2'
+  description: IM-21-BYP or TAA IM-21-BYP-T, sixteen SFP+ sockets, four bypass segments.
+- name: Module 3
+  position: '3'
+  description: IM-21-BYP or TAA IM-21-BYP-T, sixteen SFP+ sockets, four bypass segments.
+- name: PSU1
+  position: PSU1
+  description: AC or DC power option not identified by the input label.
+- name: PSU2
+  position: PSU2
+  description: AC or DC power option not identified by the input label.
+- name: Fan tray
+  position: FAN1
+  description: IBPVHD-FAN replacement fan module.
+comments: 'One rack unit, three interface-module bays, two replaceable PSU bays and one replaceable fan module.
+  Templates create bays, not installed modules. The IBPVHD-CH-AC orderable bundle originally includes one IM-21-BYP
+  and AC supplies; current population must be checked. Generic iBypass VHD does not identify AC versus DC. Net Optics/Ixia
+  legacy branding is normalized to Keysight in this custom definition. Management Ethernet speed and AC inlet subtype
+  are intentionally unspecified where accessible vendor evidence was insufficient. No weight, measured draw, airflow
+  direction or installed module count is inferred.
+
+
+  Sources:
+
+  https://www.keysight.com/us/en/product/IBPVHD-CH-AC/ibypass-vhd.html
+
+  https://www.scribd.com/document/979793945/4e-iBypass-VHD-1-4-0-Quick-Installation-Guide
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/tap-and-ibypass-accessories.html
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/iBypass.html'

@@ -1,0 +1,54 @@
+---
+manufacturer: Cisco
+model: Catalyst 9124AXD-E
+slug: cisco-c9124axd-e
+u_height: 0
+is_full_depth: false
+part_number: C9124AXD-E
+weight: 2.9
+weight_unit: kg
+interfaces:
+- name: mGig
+  type: 2.5gbase-t
+  label: PoE-IN
+  poe_mode: pd
+  poe_type: type3-ieee802.3bt
+- name: SFP
+  type: 1000base-x-sfp
+  description: Alternative uplink; available with suitable power
+- name: LAN
+  type: 1000base-t
+  label: PoE-OUT
+  poe_mode: pse
+  poe_type: type1-ieee802.3af
+  description: PoE output available with UPOE/802.3bt or adequate DC supply
+- name: Dot11Radio0
+  type: ieee802.11ax
+  description: 2.4 GHz directional internal-antenna radio
+- name: Dot11Radio1
+  type: ieee802.11ax
+  description: 5 GHz directional internal-antenna radio
+- name: Bluetooth
+  type: ieee802.15.1
+  description: Integrated BLE radio
+console-ports:
+- name: console
+  type: rj-45
+power-ports:
+- name: DC input
+  type: other
+  description: 24-56VDC, sealed2-pin bayonet inlet
+comments: 'AXD has directional internal antennas. Includes SFP and PoE-output LAN omitted from upstream AXI/AXE relatives.
+  Wired names follow faceplate function. Power-dependent operation is not an extra physical variant.
+
+
+  Sources:
+
+
+  - [Catalyst 9124AX data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/catalyst-9100ax-access-points/nb-06-cat9124-ser-ap-ds-cte-en.html)
+
+
+  - [Catalyst 9124AX hardware features](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9124ax/install-guide/b-hig-9124ax/hardware-features.html)
+
+
+  - [Catalyst 9124AX installation](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/9124ax/install-guide/b-hig-9124ax/installation-overview.html)'

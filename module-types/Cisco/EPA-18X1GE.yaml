@@ -3,39 +3,47 @@ manufacturer: Cisco
 model: EPA-18X1GE
 part_number: EPA-18X1GE
 interfaces:
-  - name: GigabitEthernet{module}/0
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/1
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/2
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/3
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/4
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/5
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/6
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/7
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/8
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/9
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/10
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/11
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/12
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/13
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/14
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/15
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/16
-    type: 1000base-x-sfp
-  - name: GigabitEthernet{module}/17
-    type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/0
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/1
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/2
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/3
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/4
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/5
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/6
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/7
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/8
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/9
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/10
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/11
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/12
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/13
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/14
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/15
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/16
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/{module}/17
+  type: 1000base-x-sfp
+comments: 'Optional EPA for C9800-80 Bay 1. Fixed Bay 0 interfaces remain on the chassis. Validate controller software/optics
+  support and the installed PID before using this module.
+
+
+  Sources:
+
+
+  - [Catalyst 9800-80 supported hardware components](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/9800-80/installation-guide/b-wlc-ig-9800-80/supported-hardware-components.html)'

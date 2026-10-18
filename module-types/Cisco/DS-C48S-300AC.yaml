@@ -1,0 +1,18 @@
+---
+manufacturer: Cisco
+model: DS-C48S-300AC
+part_number: DS-C48S-300AC
+power-ports:
+- name: PSU{module}
+  type: iec-60320-c16
+  description: 300 W output AC PSU; notched C15 cord required
+comments: 'MDS 9148S supply with back-to-front airflow. Do not confuse output rating with measured chassis input draw.
+
+
+  Sources:
+
+
+  - [MDS 9148S data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9148s-16g-multilayer-fabric-switch/datasheet-c78-731523.html)
+
+
+  - [MDS 9148S hardware specifications](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/9148S/install/guide/9148S_hig/techspec.pdf)'

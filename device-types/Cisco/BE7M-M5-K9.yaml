@@ -1,0 +1,134 @@
+---
+manufacturer: Cisco
+model: Business Edition 7000M M5
+slug: cisco-be7m-m5-k9
+u_height: 2
+is_full_depth: true
+part_number: BE7M-M5-K9
+interfaces:
+- name: LOM1
+  type: 10gbase-t
+- name: LOM2
+  type: 10gbase-t
+- name: CIMC
+  type: 1000base-t
+  mgmt_only: true
+console-ports:
+- name: console
+  type: rj-45
+module-bays:
+- name: PSU1
+  position: '1'
+- name: PSU2
+  position: '2'
+- name: Riser1
+  position: '1'
+  description: Factory PCIe expansion; determine exact riser before installing cards
+- name: Riser2
+  position: '2'
+  description: Physically supported by chassis; unavailable in factory single-CPU BE 7M configuration
+- name: mLOM
+  position: mLOM
+  description: Optional modular LAN adapter
+- name: RAID
+  position: RAID
+  description: Dedicated RAID-controller slot
+- name: Front disk 1
+  position: front1
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 2
+  position: front2
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 3
+  position: front3
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 4
+  position: front4
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 5
+  position: front5
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 6
+  position: front6
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 7
+  position: front7
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 8
+  position: front8
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 9
+  position: front9
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 10
+  position: front10
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 11
+  position: front11
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 12
+  position: front12
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 13
+  position: front13
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 14
+  position: front14
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 15
+  position: front15
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 16
+  position: front16
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 17
+  position: front17
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 18
+  position: front18
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 19
+  position: front19
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 20
+  position: front20
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 21
+  position: front21
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 22
+  position: front22
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 23
+  position: front23
+  description: 2.5-inch SAS/SATA drive bay
+- name: Front disk 24
+  position: front24
+  description: 2.5-inch SAS/SATA drive bay
+inventory-items:
+- name: KVM connector
+  description: Front Cisco KVM breakout connector; cable exposes video, serial and USB.
+- name: Rear USB1
+  description: USB3.0 host
+- name: Rear USB2
+  description: USB3.0 host
+- name: VGA
+  description: Rear DB15 video connector
+comments: 'Exact BE 7M-M5-K9 appliance based on UCSC-C240-M5SX. Vendor factory BOM: one CPU, fourteen 300 GB drives,
+  two quad 1G PCIe NICs, two 1050 W PSUs. Embedded 2x10G LOM and CIMC remain separate physical connectors. Riser/card
+  positions and optional rear-drive backplane are not inferred. Chassis bays do not auto-install factory components.
+
+
+  Sources:
+
+
+  - [Cisco UC on UCS appliance replacement BOMs](https://www.cisco.com/c/en/us/support/docs/unified-communications/business-edition-7000/223082-uc-on-ucs-hardware-replacement-for.html)
+
+
+  - [UCS C 240 M5 hardware overview](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/c/hw/C240M5/install/C240M5/C240M5_chapter_00.html)
+
+
+  - [UCS C 240 M5 SFF specification sheet](https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c240m5-sff-specsheet.pdf)
+
+
+  - [UCS C 240 M5 riser options](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/c/hw/C240M5/install/C240M5/C240M5_chapter_010.html)'

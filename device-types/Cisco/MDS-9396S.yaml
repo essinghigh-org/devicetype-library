@@ -1,0 +1,232 @@
+---
+manufacturer: Cisco
+model: MDS 9396S
+slug: cisco-ds-c9396s-k9
+u_height: 2
+is_full_depth: true
+part_number: DS-C9396S-K9
+weight: 17.8
+weight_unit: kg
+interfaces:
+- name: mgmt0
+  type: 1000base-t
+  mgmt_only: true
+- name: fc1/1
+  type: 16gfc-sfpp
+- name: fc1/2
+  type: 16gfc-sfpp
+- name: fc1/3
+  type: 16gfc-sfpp
+- name: fc1/4
+  type: 16gfc-sfpp
+- name: fc1/5
+  type: 16gfc-sfpp
+- name: fc1/6
+  type: 16gfc-sfpp
+- name: fc1/7
+  type: 16gfc-sfpp
+- name: fc1/8
+  type: 16gfc-sfpp
+- name: fc1/9
+  type: 16gfc-sfpp
+- name: fc1/10
+  type: 16gfc-sfpp
+- name: fc1/11
+  type: 16gfc-sfpp
+- name: fc1/12
+  type: 16gfc-sfpp
+- name: fc1/13
+  type: 16gfc-sfpp
+- name: fc1/14
+  type: 16gfc-sfpp
+- name: fc1/15
+  type: 16gfc-sfpp
+- name: fc1/16
+  type: 16gfc-sfpp
+- name: fc1/17
+  type: 16gfc-sfpp
+- name: fc1/18
+  type: 16gfc-sfpp
+- name: fc1/19
+  type: 16gfc-sfpp
+- name: fc1/20
+  type: 16gfc-sfpp
+- name: fc1/21
+  type: 16gfc-sfpp
+- name: fc1/22
+  type: 16gfc-sfpp
+- name: fc1/23
+  type: 16gfc-sfpp
+- name: fc1/24
+  type: 16gfc-sfpp
+- name: fc1/25
+  type: 16gfc-sfpp
+- name: fc1/26
+  type: 16gfc-sfpp
+- name: fc1/27
+  type: 16gfc-sfpp
+- name: fc1/28
+  type: 16gfc-sfpp
+- name: fc1/29
+  type: 16gfc-sfpp
+- name: fc1/30
+  type: 16gfc-sfpp
+- name: fc1/31
+  type: 16gfc-sfpp
+- name: fc1/32
+  type: 16gfc-sfpp
+- name: fc1/33
+  type: 16gfc-sfpp
+- name: fc1/34
+  type: 16gfc-sfpp
+- name: fc1/35
+  type: 16gfc-sfpp
+- name: fc1/36
+  type: 16gfc-sfpp
+- name: fc1/37
+  type: 16gfc-sfpp
+- name: fc1/38
+  type: 16gfc-sfpp
+- name: fc1/39
+  type: 16gfc-sfpp
+- name: fc1/40
+  type: 16gfc-sfpp
+- name: fc1/41
+  type: 16gfc-sfpp
+- name: fc1/42
+  type: 16gfc-sfpp
+- name: fc1/43
+  type: 16gfc-sfpp
+- name: fc1/44
+  type: 16gfc-sfpp
+- name: fc1/45
+  type: 16gfc-sfpp
+- name: fc1/46
+  type: 16gfc-sfpp
+- name: fc1/47
+  type: 16gfc-sfpp
+- name: fc1/48
+  type: 16gfc-sfpp
+- name: fc1/49
+  type: 16gfc-sfpp
+- name: fc1/50
+  type: 16gfc-sfpp
+- name: fc1/51
+  type: 16gfc-sfpp
+- name: fc1/52
+  type: 16gfc-sfpp
+- name: fc1/53
+  type: 16gfc-sfpp
+- name: fc1/54
+  type: 16gfc-sfpp
+- name: fc1/55
+  type: 16gfc-sfpp
+- name: fc1/56
+  type: 16gfc-sfpp
+- name: fc1/57
+  type: 16gfc-sfpp
+- name: fc1/58
+  type: 16gfc-sfpp
+- name: fc1/59
+  type: 16gfc-sfpp
+- name: fc1/60
+  type: 16gfc-sfpp
+- name: fc1/61
+  type: 16gfc-sfpp
+- name: fc1/62
+  type: 16gfc-sfpp
+- name: fc1/63
+  type: 16gfc-sfpp
+- name: fc1/64
+  type: 16gfc-sfpp
+- name: fc1/65
+  type: 16gfc-sfpp
+- name: fc1/66
+  type: 16gfc-sfpp
+- name: fc1/67
+  type: 16gfc-sfpp
+- name: fc1/68
+  type: 16gfc-sfpp
+- name: fc1/69
+  type: 16gfc-sfpp
+- name: fc1/70
+  type: 16gfc-sfpp
+- name: fc1/71
+  type: 16gfc-sfpp
+- name: fc1/72
+  type: 16gfc-sfpp
+- name: fc1/73
+  type: 16gfc-sfpp
+- name: fc1/74
+  type: 16gfc-sfpp
+- name: fc1/75
+  type: 16gfc-sfpp
+- name: fc1/76
+  type: 16gfc-sfpp
+- name: fc1/77
+  type: 16gfc-sfpp
+- name: fc1/78
+  type: 16gfc-sfpp
+- name: fc1/79
+  type: 16gfc-sfpp
+- name: fc1/80
+  type: 16gfc-sfpp
+- name: fc1/81
+  type: 16gfc-sfpp
+- name: fc1/82
+  type: 16gfc-sfpp
+- name: fc1/83
+  type: 16gfc-sfpp
+- name: fc1/84
+  type: 16gfc-sfpp
+- name: fc1/85
+  type: 16gfc-sfpp
+- name: fc1/86
+  type: 16gfc-sfpp
+- name: fc1/87
+  type: 16gfc-sfpp
+- name: fc1/88
+  type: 16gfc-sfpp
+- name: fc1/89
+  type: 16gfc-sfpp
+- name: fc1/90
+  type: 16gfc-sfpp
+- name: fc1/91
+  type: 16gfc-sfpp
+- name: fc1/92
+  type: 16gfc-sfpp
+- name: fc1/93
+  type: 16gfc-sfpp
+- name: fc1/94
+  type: 16gfc-sfpp
+- name: fc1/95
+  type: 16gfc-sfpp
+- name: fc1/96
+  type: 16gfc-sfpp
+console-ports:
+- name: console
+  type: rj-45
+module-bays:
+- name: PSU1
+  position: '1'
+- name: Fan1
+  position: '1'
+- name: Fan2
+  position: '2'
+- name: PSU2
+  position: '2'
+inventory-items:
+- name: USB
+  description: USB storage port; not a console.
+comments: 'Bare chassis PID is based on Cisco spare DS-C9396S-K9=. All 96 physical cages exist regardless of 48/96-port
+  initial licence bundle. Airflow is intentionally unset because intake/exhaust options share chassis. Weight is the
+  fully configured datasheet value. Do not interpret template interface existence as port activation.
+
+
+  Sources:
+
+
+  - [MDS 9396S data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9396s-16g-multilayer-fabric-switch/datasheet-c78-734525.html)
+
+
+  - [MDS 9396S hardware overview](https://www.cisco.com/c/en/us/td/docs/switches/datacenter/mds9000/hw/9396S/installation/guide/b_mds9396_hardware_install_guide/overview.html)'

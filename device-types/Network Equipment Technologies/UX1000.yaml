@@ -1,0 +1,35 @@
+---
+manufacturer: Network Equipment Technologies
+model: UX1000
+slug: network-equipment-technologies-ux1000
+u_height: 1
+is_full_depth: false
+weight: 3.85
+weight_unit: kg
+subdevice_role: parent
+interfaces:
+- name: Ethernet 1
+  type: 1000base-t
+- name: Ethernet 2
+  type: 1000base-t
+power-ports:
+- name: Power
+  type: iec-60320-c14
+  maximum_draw: 150
+device-bays:
+- name: ASM
+  description: Optional factory-installed Application Solution Module, an independently operating server. Adds two
+    external Ethernet ports. Identify fitted ASM before creating child device.
+comments: 'Original NET UX1000 base hardware. Vendor UX1000 specifications (pages 20-21) state two base Gigabit
+  Ethernet ports, four total with optional ASM. Original chassis is 42 x 441.6 x 299 mm, 3.85 kg bare, single AC
+  supply, maximum draw 150W. IEC C14 inlet visible in the rear chassis grounding illustration. The optional ASM
+  is modeled as a device bay because it is an independently operating server; its two Ethernet ports belong to the
+  fitted child, not the base chassis. Factory telephony and ASM options are not inferable from netUX1000; no fabricated
+  installed telephony ports or module PIDs. The later Ribbon SBC 1000 definition with three fixed Ethernet ports
+  does not describe this original generation. Ethernet names are inventory names, not guaranteed CLI aliases. USB
+  host/display connectors are not serial consoles.
+
+
+  Sources:
+
+  https://fccid.io/ANATEL/02177-12-01047/2784_MANUAL/420FC864-20A2-4A46-BCDE-3AEF5E174D2A/PDF'

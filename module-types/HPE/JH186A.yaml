@@ -1,0 +1,11 @@
+---
+manufacturer: HPE
+model: JH186A
+part_number: JH186A
+airflow: front-to-rear
+comments: |
+  5930 4-slot fan tray. Instantiate only the fitted airflow variant; both chassis fan modules must match.
+
+  Sources:
+  - [HPE FlexFabric 5930 QuickSpecs](https://www.hpe.com/psnow/downloadDoc/HPE%2BFlexFabric%2B5930%2BSwitch%2BSeries-c04111326.pdf?contentDisposition=attachment&form=false&hf=regular&id=c04111326.pdf&isFutureVersion=true&isLinearized=false&preview=false&ver=25)
+  - [HPE 5930 module specifications](https://support.hpe.com/hpesc/public/docDisplay?docId=c04042502&docLocale=en_US&page=GUID-4CB3E1A1-3B0B-4546-833E-09051A64C92F.html)

@@ -1,0 +1,30 @@
+---
+manufacturer: Cisco
+model: DS-X97-SF4-K9
+part_number: DS-X97-SF4-K9
+interfaces:
+- name: mgmt0/{module}
+  type: 1000base-t
+  label: MGMT0
+  mgmt_only: true
+- name: mgmt1/{module}
+  type: other
+  label: MGMT1
+  mgmt_only: true
+  enabled: false
+  description: Physical management port; unsupported in cited hardware guide, speed left unspecified
+console-ports:
+- name: console/{module}
+  type: rj-45
+comments: 'Supervisor-4 for MDS 9706; use compatible Fabric-3 and software. Two USB 3.0 host ports are described here,
+  not console ports. Physical management names include supervisor bay to prevent duplicates; logical active-supervisor
+  name is mgmt0.
+
+
+  Sources:
+
+
+  - [MDS 9700 Supervisor-4 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9700-series-multilayer-directors/data_sheet_c78-727494.html)
+
+
+  - [MDS 9700 hardware overview](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/hw/9700/cisco-mds-9700-switching-module-installation-guide/product-overview.html)'

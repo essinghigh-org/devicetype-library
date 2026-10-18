@@ -1,0 +1,49 @@
+---
+manufacturer: Keysight
+model: DBM-300
+part_number: DBM-300
+interfaces:
+- name: '{module}/upper/A'
+  type: 1000base-lx
+  label: Upper A
+  description: Network LX single-mode socket; fixed duplex LC optics, not an SFP cage
+- name: '{module}/upper/B'
+  type: 1000base-lx
+  label: Upper B
+  description: Network LX single-mode socket; fixed duplex LC optics, not an SFP cage
+- name: '{module}/upper/1'
+  type: 1000base-x-sfp
+  label: Upper 1
+  description: Tool SFP cage
+- name: '{module}/upper/2'
+  type: 1000base-x-sfp
+  label: Upper 2
+  description: Tool SFP cage
+- name: '{module}/lower/A'
+  type: 1000base-lx
+  label: Lower A
+  description: Network LX single-mode socket; fixed duplex LC optics, not an SFP cage
+- name: '{module}/lower/B'
+  type: 1000base-lx
+  label: Lower B
+  description: Network LX single-mode socket; fixed duplex LC optics, not an SFP cage
+- name: '{module}/lower/1'
+  type: 1000base-x-sfp
+  label: Lower 1
+  description: Tool SFP cage
+- name: '{module}/lower/2'
+  type: 1000base-x-sfp
+  label: Lower 2
+  description: Tool SFP cage
+comments: 'Two bypass segments per module, four sockets each ordered A/B (network), 1/2 (tool). Upper row is odd-numbered
+  segment, lower row the next even-numbered segment. NetBox module substitution cannot calculate global sw1..sw8
+  numbering from bay 1..4, so this template uses bay/row/port names. Rename to CLI swN.A/B/1/2 after instantiation
+  if required. Copper modules provide eight RJ45 sockets; fiber variants have four fixed-LC network sockets and
+  four tool SFP cages. Active fail-to-wire state is dynamic and is not modeled as permanent passive port mappings.
+
+
+  Sources:
+
+  https://manualzilla.com/doc/6924007/install-guide
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/iBypass.html'

@@ -1,0 +1,90 @@
+---
+manufacturer: HPE
+model: JH184A
+part_number: JH184A
+comments: |
+  Compatible with FlexFabric 5930 4-slot JH179A. Port templates use standalone/IRF member 1 and native, unbroken physical ports.
+  Use actual I/O slot 1-4 as module position; reconcile the member prefix when installed in an IRF fabric.
+  This template selects Ethernet mode for each converged cage. For FC, rename/retype that same cage according to live Comware configuration; never instantiate Ethernet and FC as independent physical ports.
+
+  Sources:
+  - [HPE FlexFabric 5930 QuickSpecs](https://www.hpe.com/psnow/downloadDoc/HPE%2BFlexFabric%2B5930%2BSwitch%2BSeries-c04111326.pdf?contentDisposition=attachment&form=false&hf=regular&id=c04111326.pdf&isFutureVersion=true&isLinearized=false&preview=false&ver=25)
+  - [HPE 5930 module specifications](https://support.hpe.com/hpesc/public/docDisplay?docId=c04042502&docLocale=en_US&page=GUID-4CB3E1A1-3B0B-4546-833E-09051A64C92F.html)
+  - [HPE FlexFabric 5950 QuickSpecs, shared JH184A module](https://h41111.www4.hpe.com/jrit/uk-en/pdf/UK-2018_FlexFabric-5950-Switch.pdf)
+interfaces:
+  - name: Ten-GigabitEthernet1/{module}/1
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/2
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/3
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/4
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/5
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/6
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/7
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/8
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/9
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/10
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/11
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/12
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/13
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/14
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/15
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/16
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/17
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/18
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/19
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/20
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/21
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/22
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/23
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: Ten-GigabitEthernet1/{module}/24
+    type: 10gbase-x-sfpp
+    description: 'Converged port: Ethernet-mode template; 2/4/8G FC requires mode-specific name and media.'
+  - name: FortyGigE1/{module}/25
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/26
+    type: 40gbase-x-qsfpp

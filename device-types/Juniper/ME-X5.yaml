@@ -1,0 +1,48 @@
+---
+manufacturer: Juniper
+model: ME-X5
+slug: juniper-me-x5
+part_number: ME-X5
+u_height: 1
+is_full_depth: true
+interfaces:
+- name: xe0
+  type: 10gbase-x-sfpp
+- name: xe1
+  type: 10gbase-x-sfpp
+- name: mgmt0
+  type: 1000base-t
+  label: MIST
+  mgmt_only: true
+  description: Mist out-of-band management; physical port labelled MIST.
+- name: mgmt1
+  type: 1000base-t
+  mgmt_only: true
+  enabled: false
+  description: Additional physical management port; do not assume configured or supported for traffic.
+- name: iDRAC
+  type: other
+  mgmt_only: true
+  description: Dedicated RJ45 iDRAC Ethernet port; cited Juniper hardware guide does not specify its link speed.
+console-ports:
+- name: Serial
+  type: de-9
+module-bays:
+- name: PSU1
+  position: '1'
+  description: Hot-plug 750 W AC PSU bay.
+- name: PSU2
+  position: '2'
+  description: Hot-plug 750 W AC PSU bay.
+comments: 'Original two-data-port ME-X5; ME-X5-M is a different four-data-port model. Two hot-plug PSU modules must be instantiated
+  separately. Data ports follow Mist labels; management ports use descriptive names because Linux interface names vary by
+  OS release. iDRAC link speed is left unspecified.
+
+
+  Sources:
+
+  https://www.juniper.net/documentation/mx/es/software/mist/mist-edge/topics/topic-map/getting-started.html
+
+  https://www.juniper.net/documentation/us/en/software/mist/mist-edge-guide/mist-edge/topics/topic-map/getting-started.html
+
+  https://www.mist.com/wp-content/uploads/mist-edge-datasheet.pdf'

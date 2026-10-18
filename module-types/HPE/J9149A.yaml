@@ -1,0 +1,14 @@
+---
+manufacturer: HPE
+model: al 10-GbE 2-port CX4
+part_number: J9149A
+comments: |
+  Install in an al module bay A or B. Two independent 10GbE CX4 ports per module.
+
+  Sources:
+  - [HPE 2910al product features](https://support.hpe.com/hpesc/public/docDisplay?docId=c01844319&docLocale=en_US&page=GUID-4E05DFD3-D00F-40A9-B620-2D6082B14876.html)
+interfaces:
+  - name: '{module}1'
+    type: 10gbase-cx4
+  - name: '{module}2'
+    type: 10gbase-cx4

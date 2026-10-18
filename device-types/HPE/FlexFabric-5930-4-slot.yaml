@@ -1,0 +1,60 @@
+---
+manufacturer: HPE
+model: FlexFabric 5930 4-slot
+slug: hpe-flexfabric-5930-4-slot
+part_number: JH179A
+u_height: 2
+is_full_depth: true
+comments: |
+  Base JH179A chassis; four I/O slots, four PSU bays and two fan bays.
+  The fixed chassis has no data-plane QSFP+ ports: those are supplied by fitted line cards.
+  Do not use the upstream FlexFabric-5930-32QSFPP definition: it models a different fixed-port switch and its JH178A part_number is inconsistent with vendor identification.
+  Inventory installed I/O cards, PSUs, fan direction and IRF member IDs before populating the bays.
+  The USB Type-A host port is not a console. The RJ45 and mini-USB connectors are alternate serial console access paths.
+  JH188A is the separately identified TAA ordering variant; preserve that SKU if found.
+
+  Sources:
+  - [HPE FlexFabric 5930 QuickSpecs](https://www.hpe.com/psnow/downloadDoc/HPE%2BFlexFabric%2B5930%2BSwitch%2BSeries-c04111326.pdf?contentDisposition=attachment&form=false&hf=regular&id=c04111326.pdf&isFutureVersion=true&isLinearized=false&preview=false&ver=25)
+  - [HPE PartSurfer JH179A](https://partsurfer.hpe.com/Search.aspx?SearchText=JH179A)
+  - [HPE Comware product mapping](https://support.hpe.com/hpesc/public/docDisplay?docId=c04986859&docLocale=en_US)
+  - [HPE 5930 module specifications](https://support.hpe.com/hpesc/public/docDisplay?docId=c04042502&docLocale=en_US&page=GUID-4CB3E1A1-3B0B-4546-833E-09051A64C92F.html)
+console-ports:
+  - name: Console
+    type: rj-45
+  - name: USB Console
+    type: usb-mini-b
+interfaces:
+  - name: M-GigabitEthernet0/0/0
+    type: 1000base-t
+    mgmt_only: true
+module-bays:
+  - name: Slot 1
+    position: '1'
+    description: I/O expansion slot; use actual slot number 1-4.
+  - name: Slot 2
+    position: '2'
+    description: I/O expansion slot; use actual slot number 1-4.
+  - name: Slot 3
+    position: '3'
+    description: I/O expansion slot; use actual slot number 1-4.
+  - name: Slot 4
+    position: '4'
+    description: I/O expansion slot; use actual slot number 1-4.
+  - name: PWR1
+    position: '1'
+    description: Hot-swappable PSU bay; fitted part number unknown.
+  - name: PWR2
+    position: '2'
+    description: Hot-swappable PSU bay; fitted part number unknown.
+  - name: PWR3
+    position: '3'
+    description: Hot-swappable PSU bay; fitted part number unknown.
+  - name: PWR4
+    position: '4'
+    description: Hot-swappable PSU bay; fitted part number unknown.
+  - name: Fan1
+    position: '1'
+    description: 5930 4-slot fan tray bay; confirm airflow.
+  - name: Fan2
+    position: '2'
+    description: 5930 4-slot fan tray bay; confirm airflow.

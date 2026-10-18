@@ -1,0 +1,14 @@
+---
+manufacturer: Cisco
+model: DS-X9706-FAB3
+part_number: DS-X9706-FAB3
+comments: 'MDS 9706 Fabric3; requires compatible Supervisor4 architecture. No external cabling ports.
+
+
+  Sources:
+
+
+  - [MDS 9706 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9706-multilayer-director/datasheet-c78-731478.html)
+
+
+  - [MDS 9700 hardware overview](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/hw/9700/cisco-mds-9700-switching-module-installation-guide/product-overview.html)'

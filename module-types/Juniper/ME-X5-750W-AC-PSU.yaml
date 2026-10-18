@@ -1,0 +1,15 @@
+---
+manufacturer: Juniper
+model: ME-X5 750W AC PSU
+description: Descriptive local module model for the documented ME-X5 750W AC hot-plug supply.
+power-ports:
+- name: PSU{module}
+  type: iec-60320-c14
+comments: 'This model name is descriptive, not an invented vendor ordering code. Confirm the fitted FRU label before replacement.
+  PSU capacity is 750W; appliance input draw is not asserted.
+
+  Sources:
+
+  https://www.juniper.net/documentation/mx/es/software/mist/mist-edge/topics/topic-map/getting-started.html
+
+  https://www.mist.com/wp-content/uploads/mist-edge-datasheet.pdf'

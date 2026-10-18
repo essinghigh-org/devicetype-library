@@ -1,0 +1,11 @@
+---
+manufacturer: Arista
+model: FAN-7000-F
+part_number: FAN-7000-F
+airflow: front-to-rear
+comments: |
+  Field-replaceable fan module. Select only for a chassis whose compatibility list includes this exact module.
+  No fitted-module count is implied by this module template.
+
+  Sources:
+  - [Arista CCS-720XP datasheet](https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf)

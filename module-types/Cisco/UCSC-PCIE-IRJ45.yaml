@@ -1,0 +1,28 @@
+---
+manufacturer: Cisco
+model: UCSC-PCIE-IRJ45
+part_number: UCSC-PCIE-IRJ45
+interfaces:
+- name: PCIe{module}/1
+  type: 1000base-t
+  description: Intel i350 quad-port RJ45 adapter; physical port1
+- name: PCIe{module}/2
+  type: 1000base-t
+  description: Intel i350 quad-port RJ45 adapter; physical port2
+- name: PCIe{module}/3
+  type: 1000base-t
+  description: Intel i350 quad-port RJ45 adapter; physical port3
+- name: PCIe{module}/4
+  type: 1000base-t
+  description: Intel i350 quad-port RJ45 adapter; physical port4
+comments: 'Port names are inventory labels with PCIe slot substitution; OS names depend on firmware/hypervisor. Factory
+  BE 7M-M5 BOM lists two adapters; verify their occupied slots.
+
+
+  Sources:
+
+
+  - [Cisco UC on UCS appliance replacement BOMs](https://www.cisco.com/c/en/us/support/docs/unified-communications/business-edition-7000/223082-uc-on-ucs-hardware-replacement-for.html)
+
+
+  - [UCS C 240 M5 SFF specification sheet](https://www.cisco.com/c/dam/en/us/products/collateral/servers-unified-computing/ucs-c-series-rack-servers/c240m5-sff-specsheet.pdf)'

@@ -1,0 +1,146 @@
+---
+manufacturer: Cisco
+model: Nexus 3548P-XL
+slug: cisco-n3k-c3548p-xl
+u_height: 1
+is_full_depth: true
+part_number: N3K-C3548P-XL
+weight: 7.9
+weight_unit: kg
+interfaces:
+- name: Ethernet1/1
+  type: 10gbase-x-sfpp
+- name: Ethernet1/2
+  type: 10gbase-x-sfpp
+- name: Ethernet1/3
+  type: 10gbase-x-sfpp
+- name: Ethernet1/4
+  type: 10gbase-x-sfpp
+- name: Ethernet1/5
+  type: 10gbase-x-sfpp
+- name: Ethernet1/6
+  type: 10gbase-x-sfpp
+- name: Ethernet1/7
+  type: 10gbase-x-sfpp
+- name: Ethernet1/8
+  type: 10gbase-x-sfpp
+- name: Ethernet1/9
+  type: 10gbase-x-sfpp
+- name: Ethernet1/10
+  type: 10gbase-x-sfpp
+- name: Ethernet1/11
+  type: 10gbase-x-sfpp
+- name: Ethernet1/12
+  type: 10gbase-x-sfpp
+- name: Ethernet1/13
+  type: 10gbase-x-sfpp
+- name: Ethernet1/14
+  type: 10gbase-x-sfpp
+- name: Ethernet1/15
+  type: 10gbase-x-sfpp
+- name: Ethernet1/16
+  type: 10gbase-x-sfpp
+- name: Ethernet1/17
+  type: 10gbase-x-sfpp
+- name: Ethernet1/18
+  type: 10gbase-x-sfpp
+- name: Ethernet1/19
+  type: 10gbase-x-sfpp
+- name: Ethernet1/20
+  type: 10gbase-x-sfpp
+- name: Ethernet1/21
+  type: 10gbase-x-sfpp
+- name: Ethernet1/22
+  type: 10gbase-x-sfpp
+- name: Ethernet1/23
+  type: 10gbase-x-sfpp
+- name: Ethernet1/24
+  type: 10gbase-x-sfpp
+- name: Ethernet1/25
+  type: 10gbase-x-sfpp
+- name: Ethernet1/26
+  type: 10gbase-x-sfpp
+- name: Ethernet1/27
+  type: 10gbase-x-sfpp
+- name: Ethernet1/28
+  type: 10gbase-x-sfpp
+- name: Ethernet1/29
+  type: 10gbase-x-sfpp
+- name: Ethernet1/30
+  type: 10gbase-x-sfpp
+- name: Ethernet1/31
+  type: 10gbase-x-sfpp
+- name: Ethernet1/32
+  type: 10gbase-x-sfpp
+- name: Ethernet1/33
+  type: 10gbase-x-sfpp
+- name: Ethernet1/34
+  type: 10gbase-x-sfpp
+- name: Ethernet1/35
+  type: 10gbase-x-sfpp
+- name: Ethernet1/36
+  type: 10gbase-x-sfpp
+- name: Ethernet1/37
+  type: 10gbase-x-sfpp
+- name: Ethernet1/38
+  type: 10gbase-x-sfpp
+- name: Ethernet1/39
+  type: 10gbase-x-sfpp
+- name: Ethernet1/40
+  type: 10gbase-x-sfpp
+- name: Ethernet1/41
+  type: 10gbase-x-sfpp
+- name: Ethernet1/42
+  type: 10gbase-x-sfpp
+- name: Ethernet1/43
+  type: 10gbase-x-sfpp
+- name: Ethernet1/44
+  type: 10gbase-x-sfpp
+- name: Ethernet1/45
+  type: 10gbase-x-sfpp
+- name: Ethernet1/46
+  type: 10gbase-x-sfpp
+- name: Ethernet1/47
+  type: 10gbase-x-sfpp
+- name: Ethernet1/48
+  type: 10gbase-x-sfpp
+- name: mgmt0
+  type: 1000base-t
+  mgmt_only: true
+console-ports:
+- name: console
+  type: rj-45
+module-bays:
+- name: PSU1
+  position: '1'
+  description: Choose installed PSU PID and match airflow
+- name: PSU2
+  position: '2'
+  description: Choose installed PSU PID and match airflow
+- name: Fan1
+  position: '1'
+  description: Fan module; direction must match power supplies
+- name: Fan2
+  position: '2'
+  description: Fan module; direction must match power supplies
+- name: Fan3
+  position: '3'
+  description: Fan module; direction must match power supplies
+- name: Fan4
+  position: '4'
+  description: Fan module; direction must match power supplies
+inventory-items:
+- name: USB1
+  description: USB host connector; not a serial console
+- name: USB2
+  description: USB host connector; not a serial console
+- name: 1PPS
+  description: Timing input, RF 1.0/2.3 Quick Connect connector
+comments: 'Exact XL PID; 48 SFP+ cages and one management RJ45. XL has different memory from the older N3K-C3548P-10GX.
+  Airflow and fitted PSU/fan models are intentionally not selected.
+
+
+  Sources:
+
+
+  - [Nexus 3548-X/XL data sheet](https://www.cisco.com/c/en/us/products/collateral/switches/nexus-3548-switch/data_sheet_c78-707001.html)'

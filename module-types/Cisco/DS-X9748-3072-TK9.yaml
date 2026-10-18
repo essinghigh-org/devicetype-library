@@ -1,0 +1,113 @@
+---
+manufacturer: Cisco
+model: DS-X9748-3072-TK9
+part_number: DS-X9748-3072-TK9
+interfaces:
+- name: fc{module}/1
+  type: 64gfc-sfpp
+- name: fc{module}/2
+  type: 64gfc-sfpp
+- name: fc{module}/3
+  type: 64gfc-sfpp
+- name: fc{module}/4
+  type: 64gfc-sfpp
+- name: fc{module}/5
+  type: 64gfc-sfpp
+- name: fc{module}/6
+  type: 64gfc-sfpp
+- name: fc{module}/7
+  type: 64gfc-sfpp
+- name: fc{module}/8
+  type: 64gfc-sfpp
+- name: fc{module}/9
+  type: 64gfc-sfpp
+- name: fc{module}/10
+  type: 64gfc-sfpp
+- name: fc{module}/11
+  type: 64gfc-sfpp
+- name: fc{module}/12
+  type: 64gfc-sfpp
+- name: fc{module}/13
+  type: 64gfc-sfpp
+- name: fc{module}/14
+  type: 64gfc-sfpp
+- name: fc{module}/15
+  type: 64gfc-sfpp
+- name: fc{module}/16
+  type: 64gfc-sfpp
+- name: fc{module}/17
+  type: 64gfc-sfpp
+- name: fc{module}/18
+  type: 64gfc-sfpp
+- name: fc{module}/19
+  type: 64gfc-sfpp
+- name: fc{module}/20
+  type: 64gfc-sfpp
+- name: fc{module}/21
+  type: 64gfc-sfpp
+- name: fc{module}/22
+  type: 64gfc-sfpp
+- name: fc{module}/23
+  type: 64gfc-sfpp
+- name: fc{module}/24
+  type: 64gfc-sfpp
+- name: fc{module}/25
+  type: 64gfc-sfpp
+- name: fc{module}/26
+  type: 64gfc-sfpp
+- name: fc{module}/27
+  type: 64gfc-sfpp
+- name: fc{module}/28
+  type: 64gfc-sfpp
+- name: fc{module}/29
+  type: 64gfc-sfpp
+- name: fc{module}/30
+  type: 64gfc-sfpp
+- name: fc{module}/31
+  type: 64gfc-sfpp
+- name: fc{module}/32
+  type: 64gfc-sfpp
+- name: fc{module}/33
+  type: 64gfc-sfpp
+- name: fc{module}/34
+  type: 64gfc-sfpp
+- name: fc{module}/35
+  type: 64gfc-sfpp
+- name: fc{module}/36
+  type: 64gfc-sfpp
+- name: fc{module}/37
+  type: 64gfc-sfpp
+- name: fc{module}/38
+  type: 64gfc-sfpp
+- name: fc{module}/39
+  type: 64gfc-sfpp
+- name: fc{module}/40
+  type: 64gfc-sfpp
+- name: fc{module}/41
+  type: 64gfc-sfpp
+- name: fc{module}/42
+  type: 64gfc-sfpp
+- name: fc{module}/43
+  type: 64gfc-sfpp
+- name: fc{module}/44
+  type: 64gfc-sfpp
+- name: fc{module}/45
+  type: 64gfc-sfpp
+- name: fc{module}/46
+  type: 64gfc-sfpp
+- name: fc{module}/47
+  type: 64gfc-sfpp
+- name: fc{module}/48
+  type: 64gfc-sfpp
+comments: '48 physical 64G Fibre Channel cages. Ordering bundle includes 32G shortwave optics, which do not change the
+  maximum chassis-side cage capability. Current optic and link speed remain per-interface inventory. Verify Supervisor-4/Fabric-3
+  and software support.
+
+
+  Sources:
+
+
+  - [MDS 9700 48-port 64G Fibre Channel module](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9700-series-multilayer-directors/datasheet-c78-2466559.html)
+
+
+  - [MDS 9706 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9706-multilayer-director/datasheet-c78-731478.html)'

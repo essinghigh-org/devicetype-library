@@ -1,0 +1,89 @@
+---
+manufacturer: Cisco
+model: MDS 9706
+slug: cisco-ds-c9706
+u_height: 9
+is_full_depth: true
+part_number: DS-C9706
+airflow: front-to-rear
+weight: 65.8
+weight_unit: kg
+module-bays:
+- name: Slot 1
+  position: '1'
+  description: Line-card module
+- name: Slot 2
+  position: '2'
+  description: Line-card module
+- name: Slot 3
+  position: '3'
+  description: Supervisor module
+- name: Slot 4
+  position: '4'
+  description: Supervisor module
+- name: Slot 5
+  position: '5'
+  description: Line-card module
+- name: Slot 6
+  position: '6'
+  description: Line-card module
+- name: Fabric 1
+  position: '1'
+  description: Rear crossbar fabric module
+- name: Fabric 2
+  position: '2'
+  description: Rear crossbar fabric module
+- name: Fabric 3
+  position: '3'
+  description: Rear crossbar fabric module
+- name: Fabric 4
+  position: '4'
+  description: Rear crossbar fabric module
+- name: Fabric 5
+  position: '5'
+  description: Rear crossbar fabric module
+- name: Fabric 6
+  position: '6'
+  description: Rear crossbar fabric module
+- name: Fan 1
+  position: '1'
+  description: Rear fan tray
+- name: Fan 2
+  position: '2'
+  description: Rear fan tray
+- name: Fan 3
+  position: '3'
+  description: Rear fan tray
+- name: PSU1
+  position: '1'
+  description: Power supply; gridA1/2, gridB3/4
+- name: PSU2
+  position: '2'
+  description: Power supply; gridA1/2, gridB3/4
+- name: PSU3
+  position: '3'
+  description: Power supply; gridA1/2, gridB3/4
+- name: PSU4
+  position: '4'
+  description: Power supply; gridA1/2, gridB3/4
+comments: 'Chassis-only definition. Physical network/management/console ports are created only by installed line-card/supervisor
+  modules. No fitted module generation, port count, PSU count or licence bundle is guessed. Weight is bare chassis. Module
+  examples in this package are a researched subset, not an exhaustive support matrix.
+
+
+  Sources:
+
+
+  - [MDS 9706 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9706-multilayer-director/datasheet-c78-731478.html)
+
+
+  - [MDS 9700 hardware overview](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/hw/9700/cisco-mds-9700-switching-module-installation-guide/product-overview.html)
+
+
+  - [MDS 9700 Supervisor-4 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9700-series-multilayer-directors/data_sheet_c78-727494.html)
+
+
+  - [MDS 9700 48-port 64G Fibre Channel module](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9700-series-multilayer-directors/datasheet-c78-2466559.html)
+
+
+  - [MDS 9000 compatibility matrix](https://www.cisco.com/c/en/us/td/docs/dcn/mds9000/sw/9x/compatibility-matrix/cisco-mds-9000-nx-os-compatibility-matrix-9x.html)'

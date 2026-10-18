@@ -1,0 +1,32 @@
+---
+manufacturer: Cisco
+model: Meraki MV12WE
+slug: cisco-mv12we-hw
+u_height: 0
+is_full_depth: false
+part_number: MV12WE-HW
+weight: 0.28
+weight_unit: kg
+interfaces:
+- name: Ethernet
+  type: 1000base-t
+  poe_mode: pd
+  poe_type: type1-ieee802.3af
+- name: WLAN
+  type: ieee802.11ac
+  rf_role: station
+  description: Dual-band Wi-Fi client interface; supports 2.4GHz802.11n and 5 GHz802.11ac
+inventory-items:
+- name: Internal storage
+  description: 128 GB high-endurance solid-state video storage
+comments: 'Fixed wide-angle camera; 128 GB internal storage. One dual-band Wi-Fi client radio is represented, not two
+  simultaneous client-serving AP radios. No external power inlet beyond PoE.
+
+
+  Sources:
+
+
+  - [Meraki second-generation camera data sheet](https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Product_Information/MV_Overviews_and_Datasheets/Second_Generation_MV_Cameras:_Datasheet)
+
+
+  - [Meraki MV12 installation guide](https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Install_and_Get_Started/MV44X_Installation_Guide/MV12_Installation_Guide)'

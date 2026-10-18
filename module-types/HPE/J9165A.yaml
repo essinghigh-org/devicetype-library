@@ -1,0 +1,12 @@
+---
+manufacturer: HPE
+model: al 10-GbE 1-port CX4 interconnect module (J9165A kit component)
+part_number: J9165A
+comments: |
+  Install in an al module bay A or B. J9165A is the kit ordering number; this template represents ONE of its two one-port modules, not the whole kit.
+
+  Sources:
+  - [HPE J9165A interconnect kit QuickSpecs](https://www.hpe.com/psnow/downloadDoc/HP%2010GbE%20al%20Switch%20Interconnect%20Kit-c04123274.pdf?contentDisposition=attachment&deepLink=&form=false&hf=regular&id=c04123274.pdf&isFutureVersion=true&isLinearized=false&originalObjectName=&prelaunchSection=&preview=false&print=&r=&section=&softrollSection=&ver=8)
+interfaces:
+  - name: '{module}1'
+    type: 10gbase-cx4

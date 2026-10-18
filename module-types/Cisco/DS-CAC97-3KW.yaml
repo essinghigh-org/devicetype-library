@@ -1,0 +1,16 @@
+---
+manufacturer: Cisco
+model: DS-CAC97-3KW
+part_number: DS-CAC97-3KW
+power-ports:
+- name: PSU{module}
+  type: other
+  description: AC input, nominal 3kW-class output at high-line; verify exact inlet against PSU label.
+comments: 'AC supply option. Inlet subtype and input maximum are left unspecified rather than inferred from 3kW output
+  rating. Confirm exact inlet before cable automation.
+
+
+  Sources:
+
+
+  - [MDS 9706 data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9706-multilayer-director/datasheet-c78-731478.html)'

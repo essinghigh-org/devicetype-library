@@ -1,0 +1,63 @@
+---
+manufacturer: Juniper
+model: AP12
+slug: juniper-ap12
+u_height: 0
+is_full_depth: false
+airflow: passive
+weight: 0.6
+weight_unit: kg
+interfaces:
+- name: eth0
+  type: 1000base-t
+  poe_mode: pd
+  poe_type: type2-ieee802.3at
+  label: ETH0/PoE
+- name: eth1
+  type: 1000base-t
+  poe_mode: pse
+  poe_type: type1-ieee802.3af
+  label: ETH1/PSE
+  description: Class 2 PoE output; requires 802.3at on eth0.
+- name: eth2
+  type: 1000base-t
+- name: eth3
+  type: 1000base-t
+- name: wlan0
+  type: ieee802.11ax
+  description: 2.4 GHz client radio, 2x2:2
+  rf_role: ap
+- name: wlan1
+  type: ieee802.11ax
+  description: 5 GHz client radio, 2x2:2
+  rf_role: ap
+- name: scan0
+  type: other-wireless
+  description: Dedicated 2.4/5 GHz scanning radio
+- name: ble0
+  type: ieee802.15.1
+  description: Bluetooth 5.0 omnidirectional radio
+front-ports:
+- name: PASS THRU (side)
+  type: 8p8c
+  positions: 1
+  description: Passive side socket; electrically connected to rear PASS THRU.
+rear-ports:
+- name: PASS THRU (rear)
+  type: 8p8c
+  positions: 1
+port-mappings:
+- front_port: PASS THRU (side)
+  front_port_position: 1
+  rear_port: PASS THRU (rear)
+  rear_port_position: 1
+comments: 'Indoor wall plate AP. The passive RJ45 pair is separate from eth0-eth3. Wireless interface names are local template
+  identifiers, not a claim about firmware interface names. No regional radio SKU, channel plan, SSID or fitted antenna is
+  assumed.
+
+
+  Sources:
+
+  https://www.juniper.net/gb/en/products/access-points/ap12-access-point-datasheet.html
+
+  https://www.juniper.net/documentation/us/en/hardware/ap12/ap12.pdf'

@@ -1,0 +1,28 @@
+---
+manufacturer: HPE
+model: JH183A
+part_number: JH183A
+comments: |
+  Compatible with FlexFabric 5930 4-slot JH179A. Port templates use standalone/IRF member 1 and native, unbroken physical ports.
+  Use actual I/O slot 1-4 as module position; reconcile the member prefix when installed in an IRF fabric.
+
+  Sources:
+  - [HPE FlexFabric 5930 QuickSpecs](https://www.hpe.com/psnow/downloadDoc/HPE%2BFlexFabric%2B5930%2BSwitch%2BSeries-c04111326.pdf?contentDisposition=attachment&form=false&hf=regular&id=c04111326.pdf&isFutureVersion=true&isLinearized=false&preview=false&ver=25)
+  - [HPE 5930 module specifications](https://support.hpe.com/hpesc/public/docDisplay?docId=c04042502&docLocale=en_US&page=GUID-4CB3E1A1-3B0B-4546-833E-09051A64C92F.html)
+interfaces:
+  - name: FortyGigE1/{module}/1
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/2
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/3
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/4
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/5
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/6
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/7
+    type: 40gbase-x-qsfpp
+  - name: FortyGigE1/{module}/8
+    type: 40gbase-x-qsfpp

@@ -1,0 +1,49 @@
+---
+manufacturer: Cisco
+model: Aironet 3802I-I
+slug: cisco-air-ap3802i-i-k9
+u_height: 0
+is_full_depth: false
+part_number: AIR-AP3802I-I-K9
+weight: 2.09
+weight_unit: kg
+interfaces:
+- name: GigabitEthernet0
+  type: 5gbase-t
+  label: PoE / mGig
+  poe_mode: pd
+  poe_type: type2-ieee802.3at
+- name: GigabitEthernet1
+  type: 1000base-t
+  label: AUX
+- name: Dot11Radio0
+  type: ieee802.11ac
+  description: Flexible 2.4 GHz/5 GHz radio
+- name: Dot11Radio1
+  type: ieee802.11ac
+  description: 5 GHz radio
+console-ports:
+- name: console
+  type: rj-45
+power-ports:
+- name: DC input
+  type: other
+  description: 48 VDC local supply connector; use Cisco-compatible adapter.
+module-bays:
+- name: Expansion module
+  position: '0'
+  description: Optional access-point expansion module connector on base
+inventory-items:
+- name: USB host
+  description: USB2.0 host connector; not a serial console.
+comments: 'Regulatory domain I retained in model/PID. Ethernet count follows vendor: one mGig plus one AUX. Radio modes
+  depend on configuration.
+
+
+  Sources:
+
+
+  - [Cisco Aironet 3800 data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-3800-series-access-points/datasheet-c78-741682.html)
+
+
+  - [Aironet 3800 Getting Started Guide](https://www.cisco.com/c/en/us/td/docs/wireless/access_point/3800/quick/guide/ap3800iepgetstart.html)'

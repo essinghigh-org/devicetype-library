@@ -1,0 +1,53 @@
+---
+manufacturer: Cisco
+model: Catalyst 8200L-1N-4T
+slug: cisco-c8200l-1n-4t
+u_height: 1
+is_full_depth: false
+part_number: C8200L-1N-4T
+interfaces:
+- name: GigabitEthernet0/0/0
+  type: 1000base-t
+- name: GigabitEthernet0/0/1
+  type: 1000base-t
+- name: GigabitEthernet0/0/2
+  type: 1000base-x-sfp
+- name: GigabitEthernet0/0/3
+  type: 1000base-x-sfp
+console-ports:
+- name: console
+  type: rj-45
+power-ports:
+- name: AC input
+  type: iec-60320-c14
+  description: Fixed internal100W AC PSU; not a removable module
+- name: PoE adapter input
+  type: other
+  description: Optional54VDC external supply for PoE NIM only; cannot power chassis
+module-bays:
+- name: NIM
+  position: '1'
+  description: Network Interface Module; interfaces use 0/1/port
+- name: PIM
+  position: PIM
+  description: Pluggable Interface Module, e.g. cellular; verify installed PID and logical slot
+- name: M.2 storage
+  position: M2
+  description: M.2 USB/NVMe storage module
+inventory-items:
+- name: USB0
+  description: USB host connector for storage
+comments: 'Fixed internal AC supply is represented by its inlet. Optional54V PoE supply is separate. Module slots exist
+  even if unpopulated. C8200L PID is retained.
+
+
+  Sources:
+
+
+  - [Catalyst 8200 data sheet](https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8200-series-edge-platforms/nb-06-cat8200-series-edge-plat-ds-cte-en.html)
+
+
+  - [Catalyst 8200 hardware installation guide](https://www.cisco.com/c/en/us/td/docs/routers/cloud_edge/c8200/hardware_install/b-cat-8200-series-edge-platforms-hig.pdf)
+
+
+  - [Catalyst 8200 FAQ](https://www.cisco.com/c/en/us/products/collateral/routers/catalyst-8200-series-edge-platforms/catalyst-8200-series-edge-platforms-faq.html)'

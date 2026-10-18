@@ -1,0 +1,17 @@
+---
+manufacturer: Keysight
+model: IBPVHD-PWR-DC
+part_number: IBPVHD-PWR-DC
+power-ports:
+- name: '{module}'
+  type: dc-terminal
+  description: Nominal -48 VDC input.
+comments: 'Field-replaceable iBypass VHD power supply. Do not substitute a power supply output wattage for measured
+  chassis consumption. AC inlet subtype intentionally remains other until verified against the fitted unit.
+
+
+  Sources:
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/tap-and-ibypass-accessories.html
+
+  https://www.scribd.com/document/979793945/4e-iBypass-VHD-1-4-0-Quick-Installation-Guide'

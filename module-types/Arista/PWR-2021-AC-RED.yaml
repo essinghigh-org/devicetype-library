@@ -2,8 +2,14 @@
 manufacturer: Arista
 model: PWR-2021-AC-RED
 part_number: PWR-2021-AC-RED
-# airflow: front-to-rear
+airflow: front-to-rear
+comments: |
+  AC PSU rated for 2000 W output (subject to input-voltage constraints).
+  The vendor 720XP datasheet lists the inlet as IEC-320-C16. Output capacity is not entered as maximum_draw.
+  This corrects the C14 inlet in the pinned upstream module; choose this custom definition in preference to that upstream copy.
+
+  Sources:
+  - [Arista CCS-720XP datasheet](https://www.arista.com/assets/data/pdf/Datasheets/CCS-720XP-Datasheet.pdf)
 power-ports:
   - name: '{module}'
-    type: iec-60320-c14
-    maximum_draw: 2000
+    type: iec-60320-c16

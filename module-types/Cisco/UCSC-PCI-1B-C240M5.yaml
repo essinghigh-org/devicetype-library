@@ -1,0 +1,22 @@
+---
+manufacturer: Cisco
+model: UCSC-PCI-1B-C240M5
+part_number: UCSC-PCI-1B-C240M5
+module-bays:
+- name: PCIe {module}/1
+  position: '1'
+  description: PCIe slot 1; Gen3x8; CPU1
+- name: PCIe {module}/2
+  position: '2'
+  description: PCIe slot 2; Gen3x8; CPU1
+- name: PCIe {module}/3
+  position: '3'
+  description: PCIe slot 3; Gen3x8; CPU1
+comments: 'Riser1B; all three slots use CPU1. Install only if the riser PID is observed. Do not install simultaneously
+  with a different riser definition in the same slot.
+
+
+  Sources:
+
+
+  - [UCS C 240 M5 riser options](https://www.cisco.com/c/en/us/td/docs/unified_computing/ucs/c/hw/C240M5/install/C240M5/C240M5_chapter_010.html)'

@@ -1,0 +1,11 @@
+---
+manufacturer: Cisco
+model: DS-C48S-FAN
+part_number: DS-C48S-FAN
+comments: 'MDS 9148S fan module; back-to-front airflow. Install in one of the two documented fan bays.
+
+
+  Sources:
+
+
+  - [MDS 9148S data sheet](https://www.cisco.com/c/en/us/products/collateral/storage-networking/mds-9148s-16g-multilayer-fabric-switch/datasheet-c78-731523.html)'

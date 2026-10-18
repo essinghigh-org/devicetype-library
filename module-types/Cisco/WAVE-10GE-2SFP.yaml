@@ -1,0 +1,23 @@
+---
+manufacturer: Cisco
+model: WAVE-10GE-2SFP
+part_number: WAVE-10GE-2SFP
+interfaces:
+- name: TenGigabitEthernet{module}/0
+  type: 10gbase-x-sfpp
+- name: TenGigabitEthernet{module}/1
+  type: 10gbase-x-sfpp
+comments: 'Installed module ports substitute bay position 1. Physical ports are separate interfaces; inline bypass pairing
+  is operational configuration. Two SFP/SFP+ cages; WCCP deployment, no hardware inline bypass.
+
+
+  Sources:
+
+
+  - [Cisco WAVE data sheet](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/data_sheet_c78-685554.html)
+
+
+  - [WAVE 594/694 specifications](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG/594spec.pdf)
+
+
+  - [WAAS interface naming](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/waas/v531/configuration/guide/cnfg/network.pdf)'

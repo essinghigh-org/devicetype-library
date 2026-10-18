@@ -1,0 +1,27 @@
+---
+manufacturer: Cisco
+model: Aironet 1815I-E
+slug: cisco-air-ap1815i-e-k9
+u_height: 0
+is_full_depth: false
+part_number: AIR-AP1815I-E-K9
+weight: 0.4
+weight_unit: kg
+interfaces:
+- name: GigabitEthernet0
+  type: 1000base-t
+  poe_mode: pd
+  poe_type: type1-ieee802.3af
+- name: Dot11Radio0
+  type: ieee802.11n
+  description: 2.4 GHz client radio
+- name: Dot11Radio1
+  type: ieee802.11ac
+  description: 5 GHz client radio
+console-ports:
+- name: console
+  type: rj-45
+comments: 'Sources:
+
+
+  - [Cisco Aironet 1815i data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-1815-series-access-points/datasheet-c78-738243.html)'

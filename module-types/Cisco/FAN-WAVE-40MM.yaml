@@ -1,0 +1,14 @@
+---
+manufacturer: Cisco
+model: FAN-WAVE-40MM
+part_number: FAN-WAVE-40MM
+comments: '40 mm fan module. WAVE 594 and 694 have six rear fan positions. Spare ordering PID adds an equals sign.
+
+
+  Sources:
+
+
+  - [WAVE 594/694 hardware installation guide](https://www.cisco.com/c/en/us/td/docs/app_ntwk_services/waas/wave/installation/594-694/guide/WAVE-594_HIG.pdf)
+
+
+  - [WAVE part-number list](https://www.cisco.com/c/en/us/products/collateral/routers/wide-area-application-services-waas-appliances/eos-eol-notice-c51-739730.html)'

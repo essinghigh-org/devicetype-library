@@ -1,0 +1,40 @@
+---
+manufacturer: Juniper
+model: AP32
+slug: juniper-ap32
+u_height: 0
+is_full_depth: false
+airflow: passive
+weight: 0.83
+weight_unit: kg
+interfaces:
+- name: eth0
+  type: 2.5gbase-t
+  poe_mode: pd
+  poe_type: type2-ieee802.3at
+- name: eth1
+  type: 1000base-t
+- name: wlan0
+  type: ieee802.11ax
+  description: 2.4 GHz client radio, 2x2:2
+  rf_role: ap
+- name: wlan1
+  type: ieee802.11ax
+  description: 5 GHz client radio, 4x4:4
+  rf_role: ap
+- name: scan0
+  type: other-wireless
+  description: Dedicated 2.4/5 GHz scanning radio
+- name: ble0
+  type: ieee802.15.1
+  description: Bluetooth 5.0 omnidirectional radio
+inventory-items:
+- name: USB port
+  description: USB 2.0 accessory interface; not asserted to be a serial console.
+comments: 'Internal antenna AP32; AP32E is a separate model. Wireless interface names are local template identifiers, not
+  a claim about firmware interface names. No regional radio SKU, channel plan, SSID or fitted antenna is assumed.
+
+
+  Sources:
+
+  https://www.juniper.net/us/en/products/access-points/ap32-access-point-datasheet.html'

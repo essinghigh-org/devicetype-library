@@ -1,0 +1,22 @@
+---
+manufacturer: Cisco
+model: Meraki MV21
+slug: cisco-mv21-hw
+u_height: 0
+is_full_depth: false
+part_number: MV21-HW
+interfaces:
+- name: Ethernet
+  type: 100base-tx
+  poe_mode: pd
+  poe_type: type1-ieee802.3af
+comments: 'First-generation indoor camera; single100Mbps PoE Ethernet port. No Wi-Fi interface is invented.
+
+
+  Sources:
+
+
+  - [Meraki MV21 installation guide](https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Install_and_Get_Started/MV44X_Installation_Guide/MV21_Installation_Guide)
+
+
+  - [Meraki second-generation camera data sheet](https://documentation.meraki.com/IoT/MV_-_Smart_Cameras/Product_Information/MV_Overviews_and_Datasheets/Second_Generation_MV_Cameras:_Datasheet)'

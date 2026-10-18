@@ -1,0 +1,151 @@
+---
+manufacturer: Arista
+model: DCS-7280SR2-48YC6
+slug: arista-dcs-7280sr2-48yc6
+u_height: 1
+is_full_depth: false
+comments: |
+  Base chassis definition for an inventory label without the orderable airflow/power suffix.
+  No exact orderable part_number is asserted. Import the fitted power supplies and fans only after inventory verification.
+  Interfaces use native unbroken physical cages; do not instantiate breakout children alongside these parent templates.
+  Interface naming follows the pinned upstream template and should be reconciled with live EOS ifName/L1 profile settings.
+  USB Type-A host connectors are not console ports.
+
+  Sources:
+  - [Arista 7280R datasheet](https://www.arista.com/assets/data/pdf/Datasheets/7280R-DataSheet.pdf)
+
+  Upstream comparison: https://github.com/netbox-community/devicetype-library/blob/37f5f02c27eedf60767594174598daec5b9e2bee/device-types/Arista/DCS-7280SR2-48YC6-F.yaml
+console-ports:
+  - name: Console
+    type: rj-45
+interfaces:
+  - name: Management1
+    type: 1000base-t
+    mgmt_only: true
+  - name: Ethernet1
+    type: 25gbase-x-sfp28
+  - name: Ethernet2
+    type: 25gbase-x-sfp28
+  - name: Ethernet3
+    type: 25gbase-x-sfp28
+  - name: Ethernet4
+    type: 25gbase-x-sfp28
+  - name: Ethernet5
+    type: 25gbase-x-sfp28
+  - name: Ethernet6
+    type: 25gbase-x-sfp28
+  - name: Ethernet7
+    type: 25gbase-x-sfp28
+  - name: Ethernet8
+    type: 25gbase-x-sfp28
+  - name: Ethernet9
+    type: 25gbase-x-sfp28
+  - name: Ethernet10
+    type: 25gbase-x-sfp28
+  - name: Ethernet11
+    type: 25gbase-x-sfp28
+  - name: Ethernet12
+    type: 25gbase-x-sfp28
+  - name: Ethernet13
+    type: 25gbase-x-sfp28
+  - name: Ethernet14
+    type: 25gbase-x-sfp28
+  - name: Ethernet15
+    type: 25gbase-x-sfp28
+  - name: Ethernet16
+    type: 25gbase-x-sfp28
+  - name: Ethernet17
+    type: 25gbase-x-sfp28
+  - name: Ethernet18
+    type: 25gbase-x-sfp28
+  - name: Ethernet19
+    type: 25gbase-x-sfp28
+  - name: Ethernet20
+    type: 25gbase-x-sfp28
+  - name: Ethernet21
+    type: 25gbase-x-sfp28
+  - name: Ethernet22
+    type: 25gbase-x-sfp28
+  - name: Ethernet23
+    type: 25gbase-x-sfp28
+  - name: Ethernet24
+    type: 25gbase-x-sfp28
+  - name: Ethernet25
+    type: 25gbase-x-sfp28
+  - name: Ethernet26
+    type: 25gbase-x-sfp28
+  - name: Ethernet27
+    type: 25gbase-x-sfp28
+  - name: Ethernet28
+    type: 25gbase-x-sfp28
+  - name: Ethernet29
+    type: 25gbase-x-sfp28
+  - name: Ethernet30
+    type: 25gbase-x-sfp28
+  - name: Ethernet31
+    type: 25gbase-x-sfp28
+  - name: Ethernet32
+    type: 25gbase-x-sfp28
+  - name: Ethernet33
+    type: 25gbase-x-sfp28
+  - name: Ethernet34
+    type: 25gbase-x-sfp28
+  - name: Ethernet35
+    type: 25gbase-x-sfp28
+  - name: Ethernet36
+    type: 25gbase-x-sfp28
+  - name: Ethernet37
+    type: 25gbase-x-sfp28
+  - name: Ethernet38
+    type: 25gbase-x-sfp28
+  - name: Ethernet39
+    type: 25gbase-x-sfp28
+  - name: Ethernet40
+    type: 25gbase-x-sfp28
+  - name: Ethernet41
+    type: 25gbase-x-sfp28
+  - name: Ethernet42
+    type: 25gbase-x-sfp28
+  - name: Ethernet43
+    type: 25gbase-x-sfp28
+  - name: Ethernet44
+    type: 25gbase-x-sfp28
+  - name: Ethernet45
+    type: 25gbase-x-sfp28
+  - name: Ethernet46
+    type: 25gbase-x-sfp28
+  - name: Ethernet47
+    type: 25gbase-x-sfp28
+  - name: Ethernet48
+    type: 25gbase-x-sfp28
+  - name: Ethernet49/1
+    type: 100gbase-x-qsfp28
+  - name: Ethernet50/1
+    type: 100gbase-x-qsfp28
+  - name: Ethernet51/1
+    type: 100gbase-x-qsfp28
+  - name: Ethernet52/1
+    type: 100gbase-x-qsfp28
+  - name: Ethernet53/1
+    type: 100gbase-x-qsfp28
+  - name: Ethernet54/1
+    type: 100gbase-x-qsfp28
+module-bays:
+  - name: PSU 1
+    position: PSU1
+    description: Power-supply bay; installed SKU and input type must be inventoried.
+  - name: PSU 2
+    position: PSU2
+    description: Power-supply bay; installed SKU and input type must be inventoried.
+  - name: Fan 1
+    position: Fan1
+    description: Fan-module bay; select a supported module matching system airflow.
+  - name: Fan 2
+    position: Fan2
+    description: Fan-module bay; select a supported module matching system airflow.
+  - name: Fan 3
+    position: Fan3
+    description: Fan-module bay; select a supported module matching system airflow.
+  - name: Fan 4
+    position: Fan4
+    description: Fan-module bay; select a supported module matching system airflow.

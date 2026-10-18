@@ -1,0 +1,52 @@
+---
+manufacturer: Cisco
+model: Meraki Z3
+slug: cisco-z3-hw
+u_height: 0
+is_full_depth: false
+part_number: Z3-HW
+weight: 386
+weight_unit: g
+interfaces:
+- name: Internet
+  type: 1000base-t
+- name: LAN 1
+  type: 1000base-t
+- name: LAN 2
+  type: 1000base-t
+- name: LAN 3
+  type: 1000base-t
+- name: LAN 4
+  type: 1000base-t
+  poe_mode: pse
+  poe_type: type1-ieee802.3af
+  description: 'Last LAN port: 802.3af PoE output, 15 W budget'
+- name: WLAN 2.4GHz
+  type: ieee802.11n
+  rf_role: ap
+  description: 2.4 GHz 2x2 MIMO radio
+- name: WLAN 5GHz
+  type: ieee802.11ac
+  rf_role: ap
+  description: 5 GHz wave 2, 2x2 MU-MIMO radio
+power-ports:
+- name: DC input
+  type: other
+  maximum_draw: 25
+  description: 54 VDC input; supplied external 50 W, 0.92A adapter
+module-bays:
+- name: USB modem
+  position: USB
+  description: USB 3.0 host; optional external supported cellular modem
+comments: 'One WAN and four LAN ports, last LAN port with 802.3af PoE output. Two simultaneous Wi-Fi radios are confirmed
+  by the wireless-settings guide; installation-table wording "2.4 or 5 GHz" does not mean one radio. Hardware guide table
+  specifies 802.3af despite a generic PoE+ heading.
+
+
+  Sources:
+
+
+  - [Meraki Z3/Z3C installation guide](https://documentation.meraki.com/SASE_and_SD-WAN/Z-Series_Teleworker_Gateways/Install_and_Get_Started/Z3%2F%2FZ3C_Series_Hardware_Installation_Guide)
+
+
+  - [MX and Z-series wireless settings](https://documentation.meraki.com/SASE_and_SD-WAN/Z-Series_Teleworker_Gateways/Design_and_Configure/MX_and_Z-Series_Wireless_Settings)'

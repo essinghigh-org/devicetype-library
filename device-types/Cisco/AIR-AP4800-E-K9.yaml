@@ -1,0 +1,48 @@
+---
+manufacturer: Cisco
+model: Aironet 4800-E
+slug: cisco-air-ap4800-e-k9
+u_height: 0
+is_full_depth: false
+part_number: AIR-AP4800-E-K9
+weight: 2.5
+weight_unit: kg
+interfaces:
+- name: GigabitEthernet0
+  type: 5gbase-t
+  label: PoE / mGig
+  poe_mode: pd
+  poe_type: type2-ieee802.3at
+- name: GigabitEthernet1
+  type: 1000base-t
+  label: AUX
+- name: Dot11Radio0
+  type: ieee802.11ac
+  description: Flexible 2.4 GHz/5 GHz client radio
+- name: Dot11Radio1
+  type: ieee802.11ac
+  description: 5 GHz client radio
+- name: Monitoring radio
+  type: ieee802.11ac
+  description: Dedicated RF monitoring; not a third client-access radio
+- name: Bluetooth
+  type: ieee802.15.1
+  description: Integrated BLE radio
+console-ports:
+- name: console
+  type: rj-45
+power-ports:
+- name: DC input
+  type: other
+  description: Cisco local 50 W power-adapter input
+inventory-items:
+- name: USB host
+  description: USB2.0 host connector
+comments: 'Ethernet and auxiliary/USB capability depends on power source; full capability needs 31W at PSE. Monitoring/Bluetooth
+  names describe hardware, not claimed CLI identifiers.
+
+
+  Sources:
+
+
+  - [Cisco Aironet 4800 data sheet](https://www.cisco.com/c/en/us/products/collateral/wireless/aironet-4800-access-point/nb-09-air-4800-acces-ds-cte.html)'

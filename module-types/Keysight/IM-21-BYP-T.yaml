@@ -1,0 +1,82 @@
+---
+manufacturer: Keysight
+model: IM-21-BYP-T
+part_number: IM-21-BYP-T
+interfaces:
+- name: '{module}/1'
+  type: 10gbase-x-sfpp
+  label: '1'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/2'
+  type: 10gbase-x-sfpp
+  label: '2'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/3'
+  type: 10gbase-x-sfpp
+  label: '3'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/4'
+  type: 10gbase-x-sfpp
+  label: '4'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/5'
+  type: 10gbase-x-sfpp
+  label: '5'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/6'
+  type: 10gbase-x-sfpp
+  label: '6'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/7'
+  type: 10gbase-x-sfpp
+  label: '7'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/8'
+  type: 10gbase-x-sfpp
+  label: '8'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/9'
+  type: 10gbase-x-sfpp
+  label: '9'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/10'
+  type: 10gbase-x-sfpp
+  label: '10'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/11'
+  type: 10gbase-x-sfpp
+  label: '11'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/12'
+  type: 10gbase-x-sfpp
+  label: '12'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/13'
+  type: 10gbase-x-sfpp
+  label: '13'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/14'
+  type: 10gbase-x-sfpp
+  label: '14'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/15'
+  type: 10gbase-x-sfpp
+  label: '15'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+- name: '{module}/16'
+  type: 10gbase-x-sfpp
+  label: '16'
+  description: SFP+ socket, 1G/10G operation; network/tool role depends on selected bypass/tap configuration.
+comments: 'Sixteen SFP+ sockets with bypass battery. T suffix identifies the TAA variant. Port names use bay/physical-socket
+  ordinal, not a claim about CLI naming. Up to four bypass segments per module. Active bypass state is not expressible
+  as a fixed NetBox front/rear-port mapping, so the sockets are modeled as interfaces. Do not instantiate both an
+  interface and a passive port for the same socket.
+
+
+  Sources:
+
+  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/tap-and-ibypass-accessories.html
+
+  https://www.scribd.com/document/979793945/4e-iBypass-VHD-1-4-0-Quick-Installation-Guide
+
+  https://www.keysight.com/us/en/product/IBPVHD-CH-AC/ibypass-vhd.html'

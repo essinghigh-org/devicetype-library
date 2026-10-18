@@ -1,0 +1,15 @@
+---
+manufacturer: Juniper
+model: ME-X6 800W AC PSU
+description: Descriptive local module model for the documented ME-X6 800W AC hot-plug supply.
+power-ports:
+- name: PSU{module}
+  type: iec-60320-c14
+comments: 'This model name is descriptive, not a vendor ordering code. Fits the documented ME-X6 PSU bays; verify fitted FRU
+  number before replacement. 800W is output capacity, not asserted input draw.
+
+  Sources:
+
+  https://www.juniper.net/documentation/us/en/hardware/me-x6/topics/reference/me-x6-specifications.html
+
+  https://www.juniper.net/us/en/products/access-points/juniper-edge-datasheet.html'

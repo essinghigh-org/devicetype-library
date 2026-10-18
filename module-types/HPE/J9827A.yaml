@@ -1,14 +1,21 @@
 ---
 manufacturer: HPE
-model: HPE Aruba 5400R zl2 Management Module
+model: Aruba J9827A
 part_number: J9827A
-comments: HPE Aruba 5400R zl2 Management Module
+comments: |
+  5400R zl2 management module. Port names include the module position (MM1 or MM2) to keep two installed modules unique.
+  RJ45 and USB micro-B are alternate serial console connectors. The auxiliary Type-A USB host is not modeled as a serial console.
+  This replaces the unqualified port names in upstream Aruba-J9827A.yaml when both management bays are populated.
+
+  Sources:
+  - [HPE PartSurfer J9822A](https://partsurfer.hpe.com/Search.aspx?SearchText=J9822A)
 console-ports:
-  - name: Console
+  - name: '{module}-Console-RJ45'
     type: rj-45
-  - name: Aux
-    type: usb-a
+  - name: '{module}-Console-USB'
+    type: usb-micro-b
 interfaces:
-  - name: '{module}'
+  - name: Management-{module}
+    label: OOBM
     type: 1000base-t
     mgmt_only: true

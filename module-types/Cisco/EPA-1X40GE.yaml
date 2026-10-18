@@ -2,7 +2,14 @@
 manufacturer: Cisco
 model: EPA-1X40GE
 part_number: EPA-1X40GE
-comments: '[One 40GE-port that supports a quad small form-factor pluggable (QSFP) optical transceiver](https://www.cisco.com/c/en/us/products/collateral/application-networking-services/wide-area-application-services-waas-software/data-sheet-c78-729778.pdf)'
 interfaces:
-  - name: FortyGigE{module}/0
-    type: 40gbase-x-qsfpp
+- name: FortyGigabitEthernet0/{module}/0
+  type: 40gbase-x-qsfpp
+comments: 'Optional EPA for C9800-80 Bay 1. Fixed Bay 0 interfaces remain on the chassis. Validate controller software/optics
+  support and the installed PID before using this module.
+
+
+  Sources:
+
+
+  - [Catalyst 9800-80 supported hardware components](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/9800-80/installation-guide/b-wlc-ig-9800-80/supported-hardware-components.html)'
