@@ -1,0 +1,42 @@
+---
+manufacturer: Infoblox
+model: TE-906-HW-AC
+slug: infoblox-te-906-hw-ac
+part_number: TE-906-HW-AC
+u_height: 1
+is_full_depth: true
+airflow: front-to-rear
+weight: 7.71
+weight_unit: kg
+description: Trinzic X6 906 chassis, single fixed AC power supply
+comments: >-
+  Physical platform IB-906 in NIOS; can host the IB-926 (TE-926) licensed
+  software model. Includes 32 GB RAM, one 1 TB SSD, and four NIOS-facing
+  10/100/1000 Ethernet ports plus a dedicated IPMI/LOM Ethernet port.
+  Single 400 W rated AC PSU; chassis power draw is 250 W typical and 300 W
+  maximum. The PSU and SSD are not field-replaceable.
+  Sources: https://infoblox-docs.atlassian.net/wiki/spaces/te906/pages/314540223
+  https://infoblox-docs.atlassian.net/wiki/spaces/te906/pages/314573993
+  https://infoblox-docs.atlassian.net/wiki/spaces/te906/pages/1546880069
+console-ports:
+  - name: Console
+    type: de-9
+power-ports:
+  - name: PS0
+    type: iec-60320-c14
+    maximum_draw: 300
+    description: Fixed, non-field-replaceable AC power supply
+interfaces:
+  - name: LOM
+    type: 1000base-t
+    mgmt_only: true
+    description: Dedicated IPMI 2.0 lights-out management port
+  - name: MGMT
+    type: 1000base-t
+    description: NIOS management; can also carry appliance services
+  - name: LAN1
+    type: 1000base-t
+  - name: HA
+    type: 1000base-t
+  - name: LAN2
+    type: 1000base-t
