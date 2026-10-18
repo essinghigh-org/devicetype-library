@@ -1,12 +1,12 @@
 ---
-name: Weekly upstream rebase
+name: Weekly upstream sync PR
 on: # yamllint disable-line rule:truthy
   schedule:
     - cron: '17 5 * * 1' # Mondays at 05:17 UTC
   workflow_dispatch:
     inputs:
       dry_run:
-        description: Rebase locally and check for conflicts without pushing
+        description: Merge locally and check for conflicts without changing branches or PRs
         type: boolean
         default: false
   # Validate installation/edits safely; this event never pushes.
@@ -24,6 +24,7 @@ jobs:
     timeout-minutes: 30
     permissions:
       contents: write
+      pull-requests: write
     steps:
       - name: Check out complete fork history
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
@@ -31,82 +32,185 @@ jobs:
           ref: master
           fetch-depth: 0
           submodules: false
-      - name: Rebase safely onto upstream master
+      - name: Merge upstream into a single reusable PR
         env:
-          INITIAL_UPSTREAM_SHA: 37f5f02c27eedf60767594174598daec5b9e2bee
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
           UPSTREAM_URL: https://github.com/netbox-community/devicetype-library.git
           DRY_RUN: ${{ (github.event_name == 'push' || inputs.dry_run == true) && 'true' || 'false' }}
           GIT_TERMINAL_PROMPT: '0'
-        shell: bash
+        shell: python
         run: |
-          set -euo pipefail
-          # Only built-in Git runs here; never run scripts/hooks from fetched revisions.
-          git config core.hooksPath /dev/null
-          git config user.name 'github-actions[bot]'
-          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
-          target_ref=refs/heads/master
-          state_ref=refs/heads/automation/upstream-master
-          fail() { echo "::error::$*"; exit 1; }
-          git fetch --no-tags origin "$target_ref:refs/remotes/origin/master"
-          old=$(git rev-parse refs/remotes/origin/master)
-          git checkout --detach "$old"
-          # The state branch records the upstream tip of the last successful atomic push.
-          # On first run, the verified upstream tip when this workflow was installed is used.
-          state_old=$(git ls-remote --refs origin "$state_ref" | awk '{print $1}')
-          base=$INITIAL_UPSTREAM_SHA
-          if [ -n "$state_old" ]; then
-            git fetch --no-tags origin "$state_ref:refs/remotes/origin/upstream-state"
-            base=$(git rev-parse refs/remotes/origin/upstream-state)
-            [ "$base" = "$state_old" ] || fail 'Upstream checkpoint changed during fetch; rerun.'
-          fi
-          git remote add upstream "$UPSTREAM_URL"
-          git fetch --no-tags upstream refs/heads/master:refs/remotes/upstream/master
-          upstream=$(git rev-parse refs/remotes/upstream/master)
-          git merge-base --is-ancestor "$base" "$old" || fail 'Checkpoint is not in fork history; manual review required.'
-          git merge-base --is-ancestor "$base" "$upstream" || fail 'Upstream history was rewritten or rewound; manual review required.'
-          already_synced=false
-          if git merge-base --is-ancestor "$upstream" "$old"; then
-            if [ "$base" = "$upstream" ]; then
-              echo 'Fork already contains upstream master. Nothing to push.'
-              exit 0
-            fi
-            already_synced=true
-          fi
-          if [ "$already_synced" = false ]; then
-          # Recreating merge commits can lose manual merge resolutions; stop for review.
-          [ -z "$(git rev-list --merges "$upstream..$old")" ] || fail 'Fork-only merge commits require a manual rebase to preserve merge resolutions.'
-          if ! git rebase --reapply-cherry-picks --empty=keep "$upstream"; then
-            echo 'Rebase failed. Conflicted files (if any):'
-            git diff --name-only --diff-filter=U
-            git rebase --abort || true
-            fail 'Rebase did not finish; no remote refs were changed. Resolve manually, then rerun.'
-          fi
-          fi
-          git merge-base --is-ancestor "$upstream" HEAD || fail 'Rebase result does not contain upstream.'
-          [ -z "$(git status --porcelain)" ] || fail 'Rebase left an unclean working tree.'
-          if [ "$DRY_RUN" = true ]; then
-            echo 'Dry run succeeded. No remote refs were changed.'
-            exit 0
-          fi
-          # Check both refs immediately before the atomic compare-and-swap push.
-          [ "$(git ls-remote --refs origin "$target_ref" | awk '{print $1}')" = "$old" ] || fail 'Fork changed during rebase; rerun to include the newer commits.'
-          [ "$(git ls-remote --refs origin "$state_ref" | awk '{print $1}')" = "$state_old" ] || fail 'Checkpoint changed during rebase; rerun.'
-          [ "$(git ls-remote --refs upstream refs/heads/master | awk '{print $1}')" = "$upstream" ] || fail 'Upstream changed during rebase; rerun.'
-          if [ "$already_synced" = true ]; then
-            # A manual sync already included upstream. Record it so later rewinds are caught.
-            # Only the checkpoint changes; master is never written in this path.
-            git push origin "--force-with-lease=$state_ref:$state_old" "$upstream:$state_ref"
-            echo 'Fork already contains upstream; advanced the safety checkpoint only.'
-            exit 0
-          fi
-          # Explicit leases close races after the checks above. Never use unqualified --force.
-          # A lease is used for both fast-forward and rewritten updates for strict CAS safety.
-          # --atomic ensures a rejected/protected ref leaves BOTH remote refs unchanged.
-          git push --atomic origin \
-            "--force-with-lease=$target_ref:$old" \
-            "--force-with-lease=$state_ref:$state_old" \
-            "HEAD:$target_ref" "$upstream:$state_ref"
-          echo "Synced master onto upstream $upstream, preserving fork-only commits."
+          import json
+          import os
+          import subprocess
+          import urllib.error
+          import urllib.parse
+          import urllib.request
+          
+          REPO = os.environ['REPOSITORY']
+          BRANCH = 'automation/upstream-sync'
+          BASE = 'master'
+          MARKER = '<!-- essinghigh-weekly-upstream-sync -->'
+          
+          
+          def api(method, path, payload=None):
+              request = urllib.request.Request(
+                  f"{os.environ['GITHUB_API_URL']}/repos/{REPO}/{path}",
+                  data=json.dumps(payload).encode() if payload is not None else None,
+                  headers={'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+                           'Accept': 'application/vnd.github+json',
+                           'X-GitHub-Api-Version': '2022-11-28',
+                           'Content-Type': 'application/json'}, method=method,
+              )
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)
+          
+          
+          def open_pr():
+              # Paginate instead of relying on search-index freshness or the first page.
+              found = []
+              page = 1
+              while True:
+                  query = urllib.parse.urlencode({'state': 'open', 'base': BASE,
+                                                 'head': f"{REPO.split('/')[0]}:{BRANCH}",
+                                                 'per_page': 100, 'page': page})
+                  items = api('GET', f'pulls?{query}')
+                  found.extend(p for p in items if p['head']['ref'] == BRANCH
+                               and (p['head'].get('repo') or {}).get('full_name') == REPO
+                               and p['base']['ref'] == BASE)
+                  if len(items) < 100:
+                      break
+                  page += 1
+              if len(found) > 1:
+                  raise RuntimeError('Multiple matching open PRs exist; review them manually. No new PR created.')
+              return found[0] if found else None
+          
+          
+          def git(*args):
+              result = subprocess.run(['git', *args], text=True, capture_output=True)
+              if result.returncode:
+                  raise RuntimeError(f"git {args[0]} failed: {result.stderr}\n{result.stdout}")
+              return result.stdout.strip()
+          
+          
+          def ancestor(old, new):
+              result = subprocess.run(['git', 'merge-base', '--is-ancestor', old, new])
+              if result.returncode not in (0, 1):
+                  raise RuntimeError('Could not compare Git ancestry.')
+              return result.returncode == 0
+          
+          
+          def remote_tip(remote, ref):
+              value = git('ls-remote', '--refs', remote, ref)
+              return value.split()[0] if value else ''
+          
+          
+          def merge(sha, label):
+              try:
+                  git('merge', '--no-edit', sha)
+              except RuntimeError as error:
+                  conflicts = git('diff', '--name-only', '--diff-filter=U')
+                  subprocess.run(['git', 'merge', '--abort'], check=False)
+                  raise RuntimeError(f'{label} could not be merged. Remote branch and existing PR are unchanged. '
+                                     f'Conflicting files: {conflicts}. Git diagnostic: {error}') from None
+          
+          
+          def main():
+              # Only Git built-ins execute; never execute scripts/hooks from fetched revisions.
+              git('config', 'core.hooksPath', '/dev/null')
+              git('config', 'user.name', 'github-actions[bot]')
+              git('config', 'user.email', '41898282+github-actions[bot]@users.noreply.github.com')
+              target_ref = f'refs/heads/{BASE}'
+              sync_ref = f'refs/heads/{BRANCH}'
+              git('fetch', '--no-tags', 'origin', f'{target_ref}:refs/remotes/origin/master')
+              master = git('rev-parse', 'refs/remotes/origin/master')
+              git('fetch', '--no-tags', os.environ['UPSTREAM_URL'], 'refs/heads/master')
+              upstream = git('rev-parse', 'FETCH_HEAD')
+              if ancestor(upstream, master):
+                  print('Fork already contains upstream master. No branch or PR changes.')
+                  return
+              pr = open_pr()
+              old = remote_tip('origin', sync_ref)
+              if pr and not old:
+                  raise RuntimeError('Open sync PR has no branch; manual review required.')
+              if old:
+                  git('fetch', '--no-tags', 'origin', sync_ref)
+                  if git('rev-parse', 'FETCH_HEAD') != old:
+                      raise RuntimeError('Sync branch changed during fetch; rerun.')
+                  git('checkout', '--detach', old)
+                  # Merge into the existing branch: preserve every commit, including human edits.
+                  merge(master, 'Latest fork master')
+              else:
+                  git('checkout', '--detach', master)
+              merge(upstream, 'Upstream master')
+              head = git('rev-parse', 'HEAD')
+              if not ancestor(master, head) or not ancestor(upstream, head):
+                  raise RuntimeError('Merge result is missing fork or upstream history.')
+              if old and not ancestor(old, head):
+                  raise RuntimeError('Merge result would discard sync-branch commits.')
+              if git('status', '--porcelain'):
+                  raise RuntimeError('Merge left an unclean working tree.')
+              if not git('diff', '--name-only', master, head):
+                  print('No file differences against master. No empty PR or branch update.')
+                  return
+              if os.environ['DRY_RUN'] == 'true':
+                  print('Dry run succeeded. No branch or PR changes.')
+                  return
+              if remote_tip('origin', target_ref) != master:
+                  raise RuntimeError('Fork master changed during merge; rerun.')
+              if remote_tip(os.environ['UPSTREAM_URL'], 'refs/heads/master') != upstream:
+                  raise RuntimeError('Upstream changed during merge; rerun.')
+              if remote_tip('origin', sync_ref) != old:
+                  raise RuntimeError('Sync branch changed during merge; rerun.')
+              current_pr = open_pr()
+              if pr and (not current_pr or current_pr['number'] != pr['number']):
+                  raise RuntimeError('Sync PR changed during merge; rerun.')
+              if head != old:
+                  # CAS lease only on this automation branch. The ancestry check above makes
+                  # this a fast-forward-only update, while the explicit lease closes races.
+                  # Never write master, rebase, delete refs, or discard human commits.
+                  git('push', 'origin', f'--force-with-lease={sync_ref}:{old}', f'{head}:{sync_ref}')
+              pr = open_pr()
+              if pr:
+                  print(f"Updated the same open PR: {pr['html_url']}")
+                  return  # Keep reviewer edits to the PR title/body unchanged.
+              body = f'''{MARKER}
+          Merge upstream `netbox-community/devicetype-library:master` into this fork.
+          
+          This stable branch is updated by merging the latest fork master and upstream master.
+          Future runs reuse this open PR and preserve fork changes and edits on the sync branch.
+          The workflow never pushes to master or automatically merges this PR.
+          
+          Review the changes and required validation before merging. PRs opened or updated
+          by GITHUB_TOKEN may need a maintainer to select Approve workflows to run CI.
+          This repository also supports a maintainer adding the `ci-approved` label to
+          trigger validation of the current head. Review CI/script changes before approval.
+          Keep this PR open to receive updates; merge only after reviewing successful checks.
+          
+          Initial upstream commit: {upstream}
+          Workflow run: {os.environ['RUN_URL']}
+          '''
+              try:
+                  pr = api('POST', 'pulls', {'title': 'Merge upstream master', 'head': BRANCH,
+                                           'base': BASE, 'body': body, 'draft': True})
+              except urllib.error.HTTPError as error:
+                  # A racing creator may have won. Never retry a potentially accepted POST.
+                  pr = open_pr()
+                  if not pr:
+                      raise RuntimeError(f'PR creation failed (HTTP {error.code}). The sync branch is safe; '
+                                         'check whether GitHub Actions may create pull requests, then rerun. '
+                                         'No repository permissions or security settings were changed.') from error
+              print(f"Upstream sync PR: {pr['html_url']}")
+          
+          
+          if __name__ == '__main__':
+              try:
+                  main()
+              except Exception as error:
+                  print(f'::error::{error}')
+                  raise SystemExit(1)
 
   report-failure:
     needs: sync
@@ -137,22 +241,24 @@ jobs:
           run_url = os.environ['RUN_URL']
           marker = '<!-- essinghigh-weekly-upstream-rebase -->'
           body = f'''{marker}
-          The weekly upstream rebase needs attention.
+          The weekly upstream PR sync needs attention.
           
           - Repository: `{repo}`
           - Target: `master`; upstream: `netbox-community/devicetype-library:master`
           - Result: `{os.environ['SYNC_RESULT']}`
           - Latest run and diagnostic logs: {run_url}
           
-          The sync stops without pushing if rebasing conflicts, either branch changes during the run,
-          or upstream history is rewritten. Its atomic leased push cannot partially update the fork.
-          Check the logs for the exact failing step and whether any push completed.
+          The workflow merges into `automation/upstream-sync` and reuses its open PR.
+          It never pushes to master, rebases, or automatically merges a PR. Conflicts stop
+          before publishing, leaving the existing branch and PR intact. Concurrent branch
+          updates are protected by a lease; no sync-branch commits are discarded.
           
-          For conflicts, resolve the fork's commits against upstream manually, then rerun this workflow.
-          For permission failures, check Actions permissions and master branch protection: rebasing
-          fork-only commits requires an allowed non-fast-forward update. This workflow does not bypass
-          protection or create credentials. Upstream workflow-file changes may require a maintainer to
-          perform that sync manually because GITHUB_TOKEN cannot grant workflow-writing permissions.
+          Review the logs for the failing step. A failure after publishing may leave a safe
+          updated branch awaiting PR creation; rerunning reuses it. For conflicts, resolve
+          on the sync branch, then rerun. For PR permission failures, check the repository's
+          Allow GitHub Actions to create and approve pull requests setting. This workflow
+          does not change permissions or create credentials. Upstream workflow-file changes
+          may require a maintainer to perform the branch update manually.
           
           This single open issue is updated on subsequent failures. Close it after resolving the problem.
           '''
@@ -185,9 +291,9 @@ jobs:
                       break
                   page += 1
               if existing:
-                  result = api('PATCH', f"issues/{existing['number']}", {'body': body})
+                  result = api('PATCH', f"issues/{existing['number']}", {'title': 'Weekly upstream sync needs attention', 'body': body})
               else:
-                  result = api('POST', 'issues', {'title': 'Weekly upstream rebase failed', 'body': body})
+                  result = api('POST', 'issues', {'title': 'Weekly upstream sync needs attention', 'body': body})
               print(f"Failure issue: {result['html_url']}")
           
           
