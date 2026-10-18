@@ -1,0 +1,201 @@
+---
+name: Weekly upstream rebase
+on: # yamllint disable-line rule:truthy
+  schedule:
+    - cron: '17 5 * * 1' # Mondays at 05:17 UTC
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Rebase locally and check for conflicts without pushing
+        type: boolean
+        default: false
+  # Validate installation/edits safely; this event never pushes.
+  push:
+    branches: [master]
+    paths: [.github/workflows/upstream-rebase.yml]
+permissions: {}
+concurrency:
+  group: weekly-upstream-rebase
+  cancel-in-progress: false
+jobs:
+  sync:
+    if: github.repository == 'essinghigh-org/devicetype-library' && github.ref == 'refs/heads/master'
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - name: Check out complete fork history
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          ref: master
+          fetch-depth: 0
+          submodules: false
+      - name: Rebase safely onto upstream master
+        env:
+          INITIAL_UPSTREAM_SHA: 37f5f02c27eedf60767594174598daec5b9e2bee
+          UPSTREAM_URL: https://github.com/netbox-community/devicetype-library.git
+          DRY_RUN: ${{ (github.event_name == 'push' || inputs.dry_run == true) && 'true' || 'false' }}
+          GIT_TERMINAL_PROMPT: '0'
+        shell: bash
+        run: |
+          set -euo pipefail
+          # Only built-in Git runs here; never run scripts/hooks from fetched revisions.
+          git config core.hooksPath /dev/null
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          target_ref=refs/heads/master
+          state_ref=refs/heads/automation/upstream-master
+          fail() { echo "::error::$*"; exit 1; }
+          git fetch --no-tags origin "$target_ref:refs/remotes/origin/master"
+          old=$(git rev-parse refs/remotes/origin/master)
+          git checkout --detach "$old"
+          # The state branch records the upstream tip of the last successful atomic push.
+          # On first run, the verified upstream tip when this workflow was installed is used.
+          state_old=$(git ls-remote --refs origin "$state_ref" | awk '{print $1}')
+          base=$INITIAL_UPSTREAM_SHA
+          if [ -n "$state_old" ]; then
+            git fetch --no-tags origin "$state_ref:refs/remotes/origin/upstream-state"
+            base=$(git rev-parse refs/remotes/origin/upstream-state)
+            [ "$base" = "$state_old" ] || fail 'Upstream checkpoint changed during fetch; rerun.'
+          fi
+          git remote add upstream "$UPSTREAM_URL"
+          git fetch --no-tags upstream refs/heads/master:refs/remotes/upstream/master
+          upstream=$(git rev-parse refs/remotes/upstream/master)
+          git merge-base --is-ancestor "$base" "$old" || fail 'Checkpoint is not in fork history; manual review required.'
+          git merge-base --is-ancestor "$base" "$upstream" || fail 'Upstream history was rewritten or rewound; manual review required.'
+          already_synced=false
+          if git merge-base --is-ancestor "$upstream" "$old"; then
+            if [ "$base" = "$upstream" ]; then
+              echo 'Fork already contains upstream master. Nothing to push.'
+              exit 0
+            fi
+            already_synced=true
+          fi
+          if [ "$already_synced" = false ]; then
+          # Recreating merge commits can lose manual merge resolutions; stop for review.
+          [ -z "$(git rev-list --merges "$upstream..$old")" ] || fail 'Fork-only merge commits require a manual rebase to preserve merge resolutions.'
+          if ! git rebase --reapply-cherry-picks --empty=keep "$upstream"; then
+            echo 'Rebase failed. Conflicted files (if any):'
+            git diff --name-only --diff-filter=U
+            git rebase --abort || true
+            fail 'Rebase did not finish; no remote refs were changed. Resolve manually, then rerun.'
+          fi
+          fi
+          git merge-base --is-ancestor "$upstream" HEAD || fail 'Rebase result does not contain upstream.'
+          [ -z "$(git status --porcelain)" ] || fail 'Rebase left an unclean working tree.'
+          if [ "$DRY_RUN" = true ]; then
+            echo 'Dry run succeeded. No remote refs were changed.'
+            exit 0
+          fi
+          # Check both refs immediately before the atomic compare-and-swap push.
+          [ "$(git ls-remote --refs origin "$target_ref" | awk '{print $1}')" = "$old" ] || fail 'Fork changed during rebase; rerun to include the newer commits.'
+          [ "$(git ls-remote --refs origin "$state_ref" | awk '{print $1}')" = "$state_old" ] || fail 'Checkpoint changed during rebase; rerun.'
+          [ "$(git ls-remote --refs upstream refs/heads/master | awk '{print $1}')" = "$upstream" ] || fail 'Upstream changed during rebase; rerun.'
+          if [ "$already_synced" = true ]; then
+            # A manual sync already included upstream. Record it so later rewinds are caught.
+            # Only the checkpoint changes; master is never written in this path.
+            git push origin "--force-with-lease=$state_ref:$state_old" "$upstream:$state_ref"
+            echo 'Fork already contains upstream; advanced the safety checkpoint only.'
+            exit 0
+          fi
+          # Explicit leases close races after the checks above. Never use unqualified --force.
+          # A lease is used for both fast-forward and rewritten updates for strict CAS safety.
+          # --atomic ensures a rejected/protected ref leaves BOTH remote refs unchanged.
+          git push --atomic origin \
+            "--force-with-lease=$target_ref:$old" \
+            "--force-with-lease=$state_ref:$state_old" \
+            "HEAD:$target_ref" "$upstream:$state_ref"
+          echo "Synced master onto upstream $upstream, preserving fork-only commits."
+
+  report-failure:
+    needs: sync
+    if: >-
+      always() && github.repository == 'essinghigh-org/devicetype-library' &&
+      needs.sync.result != 'success' && needs.sync.result != 'skipped'
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      issues: write
+    steps:
+      # No checkout or repository code executes with the issue-writing token.
+      - name: Create or update the failure issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          REPOSITORY: ${{ github.repository }}
+          SYNC_RESULT: ${{ needs.sync.result }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        shell: python
+        run: |
+          import json
+          import os
+          import urllib.error
+          import urllib.request
+          
+          repo = os.environ['REPOSITORY']
+          api_url = os.environ['GITHUB_API_URL']
+          run_url = os.environ['RUN_URL']
+          marker = '<!-- essinghigh-weekly-upstream-rebase -->'
+          body = f'''{marker}
+          The weekly upstream rebase needs attention.
+          
+          - Repository: `{repo}`
+          - Target: `master`; upstream: `netbox-community/devicetype-library:master`
+          - Result: `{os.environ['SYNC_RESULT']}`
+          - Latest run and diagnostic logs: {run_url}
+          
+          The sync stops without pushing if rebasing conflicts, either branch changes during the run,
+          or upstream history is rewritten. Its atomic leased push cannot partially update the fork.
+          Check the logs for the exact failing step and whether any push completed.
+          
+          For conflicts, resolve the fork's commits against upstream manually, then rerun this workflow.
+          For permission failures, check Actions permissions and master branch protection: rebasing
+          fork-only commits requires an allowed non-fast-forward update. This workflow does not bypass
+          protection or create credentials. Upstream workflow-file changes may require a maintainer to
+          perform that sync manually because GITHUB_TOKEN cannot grant workflow-writing permissions.
+          
+          This single open issue is updated on subsequent failures. Close it after resolving the problem.
+          '''
+          
+          
+          def api(method, path, payload=None):
+              request = urllib.request.Request(
+                  f'{api_url}/repos/{repo}/{path}',
+                  data=json.dumps(payload).encode() if payload is not None else None,
+                  headers={
+                      'Authorization': f"Bearer {os.environ['GH_TOKEN']}",
+                      'Accept': 'application/vnd.github+json',
+                      'X-GitHub-Api-Version': '2022-11-28',
+                      'Content-Type': 'application/json',
+                  }, method=method,
+              )
+              with urllib.request.urlopen(request, timeout=30) as response:
+                  return json.load(response)
+          
+          
+          def main():
+              page = 1
+              existing = None
+              while True:
+                  items = api('GET', f'issues?state=open&per_page=100&page={page}')
+                  existing = next((item for item in items if 'pull_request' not in item
+                                   and marker in (item.get('body') or '')
+                                   and item.get('user', {}).get('login') == 'github-actions[bot]'), None)
+                  if existing or len(items) < 100:
+                      break
+                  page += 1
+              if existing:
+                  result = api('PATCH', f"issues/{existing['number']}", {'body': body})
+              else:
+                  result = api('POST', 'issues', {'title': 'Weekly upstream rebase failed', 'body': body})
+              print(f"Failure issue: {result['html_url']}")
+          
+          
+          if __name__ == '__main__':
+              try:
+                  main()
+              except urllib.error.HTTPError as error:
+                  print(f'::error::Could not report sync failure (GitHub HTTP {error.code}). '
+                        'Check that Issues is enabled and this job has issues: write permission. '
+                        f'Sync logs: {run_url}')
+                  raise SystemExit(1)
