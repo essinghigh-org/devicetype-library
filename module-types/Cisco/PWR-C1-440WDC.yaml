@@ -5,4 +5,10 @@ part_number: PWR-C1-440WDC
 power-ports:
   - name: PS-{module}
     type: dc-terminal
-    maximum_draw: 440
+    maximum_draw: 540
+comments: |
+  Rated DC output capacity: 440 W; this is NOT maximum AC/DC electrical input.
+  Electrical input draw at Cisco-documented full-load reference point: 540 W. Cisco 3850 DC PSU input 1841 BTU/h = 540 W at -36 VDC; 440 W is output capacity.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/hardware/installation/guide/b_c3850_hig/m_specs_hig.html

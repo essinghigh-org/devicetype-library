@@ -5,4 +5,9 @@ part_number: PWR-C5-125WAC
 power-ports:
   - name: PSU{module}
     type: iec-60320-c16
-    maximum_draw: 125
+comments: |
+  Rated DC output capacity: 125 W; this is NOT maximum AC/DC electrical input.
+  Input power UNKNOWN: maximum_draw deliberately omitted. Cisco 9200 Table 7 publishes maximum DC output and input current but not a corresponding input-watt figure.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/technical_specifications.html

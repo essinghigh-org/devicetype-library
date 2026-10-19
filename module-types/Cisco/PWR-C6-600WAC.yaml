@@ -5,4 +5,10 @@ part_number: PWR-C6-600WAC
 power-ports:
   - name: PSU{module}
     type: iec-60320-c16
-    maximum_draw: 600
+    maximum_draw: 682
+comments: |
+  Rated DC output capacity: 600 W; this is NOT maximum AC/DC electrical input.
+  Electrical input draw at Cisco-documented full-load reference point: 682 W. Cisco 9300LM Table 10: 2327 BTU/h at 100 VAC = 682 W input (derived by BTU/h conversion); output is 600 W.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig/technical-specs.html

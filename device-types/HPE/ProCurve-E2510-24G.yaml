@@ -8,7 +8,17 @@ is_full_depth: false
 airflow: right-to-left
 weight: 3.27
 weight_unit: kg
-comments: (HPE 2510 Switch Series - Specifications)[https://support.hpe.com/hpesc/public/docDisplay?docLocale=en_US&docId=c02622771]
+comments: |
+  HPE 2510G-24 (J9279A): 20 dedicated copper ports plus four
+  dual-personality ports 21-24, each offering RJ-45 copper OR SFP.
+  Only one connector on a combo port can be active at once; when an
+  optic is installed, the corresponding RJ-45 connector is disabled.
+  The template represents 24 logical ports in default copper mode,
+  NOT 24 independent copper interfaces plus four additional SFP ports.
+  If port 21-24 is wired through SFP, change that device-instance
+  interface type to match actual installed optics/cabling.
+  Vendor QuickSpecs:
+  https://www.hpe.com/psnow/downloadDoc/HP%202510%20Switch%20Series-c04111642.pdf?form=false&hf=regular&id=c04111642.pdf&servePdfFile=true
 console-ports:
   - name: Console
     type: rj-45
@@ -59,9 +69,13 @@ interfaces:
     type: 1000base-t
   - name: '21'
     type: 1000base-t
+    description: Dual-personality port (RJ-45 or SFP, mutually exclusive); default RJ-45 model.
   - name: '22'
     type: 1000base-t
+    description: Dual-personality port (RJ-45 or SFP, mutually exclusive); default RJ-45 model.
   - name: '23'
     type: 1000base-t
+    description: Dual-personality port (RJ-45 or SFP, mutually exclusive); default RJ-45 model.
   - name: '24'
     type: 1000base-t
+    description: Dual-personality port (RJ-45 or SFP, mutually exclusive); default RJ-45 model.

@@ -2,9 +2,23 @@
 manufacturer: Cisco
 model: C3850-NM-2-40G
 part_number: C3850-NM-2-40G
-comments: '[Cisco Catalyst 3850 Series Switches Data Sheet](https://www.cisco.com/c/en_in/products/collateral/switches/catalyst-3850-series-switches/datasheet_c78-720918.html)'
+comments: |
+  Two physical QSFP+ cages. Each supports native 40GbE or a 4x10GbE
+  breakout cable; the interface sets are alternative operating modes,
+  not ten simultaneously available external hardware ports.
+  Native: FortyGigabitEthernet1/{module}/1-2.
+  Breakout: TenGigabitEthernet1/{module}/1-8 (1-4 on QSFP 1,
+  5-8 on QSFP 2). Cisco notes that both sets may be shown by the
+  CLI, but the unused mode's interfaces must be disregarded.
+  This template represents the two native physical QSFP+ cages.
+  Import/reconciliation must inspect actual configuration and
+  installed module mode before changing instance interfaces.
+  Source:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3850/hardware/installation/guide/b_c3850_hig/m_install_netmod.html
 interfaces:
   - name: FortyGigabitEthernet1/{module}/1
     type: 40gbase-x-qsfpp
+    description: QSFP+ cage 1; alternatively break out as four 10GbE logical lanes (Te ports 1-4).
   - name: FortyGigabitEthernet1/{module}/2
     type: 40gbase-x-qsfpp
+    description: QSFP+ cage 2; alternatively break out as four 10GbE logical lanes (Te ports 5-8).

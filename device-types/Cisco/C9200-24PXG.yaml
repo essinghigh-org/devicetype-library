@@ -12,13 +12,17 @@ comments: |
   C9200-NM-2Y or C9200-NM-2Q uplink module. Two PSU bays and two C9200-FAN field-replaceable fan modules. PWR-C5-600WAC
   and PWR-C6-600WAC are documented AC supply options. StackWise-160 uses optional adapters supplied in C9200-STACK-KIT;
   the two adapter bays are modeled without assuming installation. No individual stack-adapter module PID or active license
-  is inferred. Interface names follow IOS XE member-1 numbering; verify against interface inventory before updating
+  is inferred. The Cisco architecture white paper explicitly maps ports 1-16 as
+  1G-only and ports 17-24 as multigig. The existing GigabitEthernet and
+  TenGigabitEthernet name prefixes remain provisional pending a real
+  C9200-24PXG interface inventory. Verify against live CLI before updating
   existing instances.
 
   Sources:
   https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-ser-data-sheet-cte-en.html
   https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/product_overview.html
   https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9200/hardware/install/b-c9200-hig/technical_specifications.html
+  https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9200-series-switches/nb-06-cat9200-architecture-cte-en.html
 console-ports:
   - name: con0
     type: rj-45

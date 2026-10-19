@@ -7,18 +7,72 @@ u_height: 2
 is_full_depth: true
 front_image: true
 rear_image: true
+weight: 13.15
+weight_unit: kg
+comments: |
+  Cisco 2951 ISR G2 physical chassis; installed modules and exact PSU option
+  are not inferred from the reported CISCO2951/K9 hardware identifier.
+  Exactly three onboard GigabitEthernet interfaces (Gi0/0-0/2).
+  Gi0/0 has RJ-45 AND SFP connectors sharing ONE logical interface;
+  an SFP uses the same Gi0/0 interface, not an additional fourth GE port.
+  Verify live media-type when reconciling cabling.
+  Four single-wide EHWIC slots (0-3) can instead house two double-wide
+  EHWICs across adjacent pairs (0+1, 2+3). Two SM positions can house
+  two single-wide modules OR one double-wide; these are mutually
+  exclusive combinations, not extra simultaneous bays.
+  Also has 1 internal ISM, 3 PVDM3 sockets and 2 CompactFlash slots.
+  Bays represent *possible* expansion positions, not installed parts.
+  Standard AC power consumption 75-320 W configuration dependent;
+  AC-POE option can draw up to 750 W. No power-port maximum_draw is set
+  because exact installed supply/PID was not provided. Weight is a
+  reference for the no-module chassis with standard AC PSU (13.15 kg);
+  AC-POE weighs 13.6 kg before modules.
+  Two USB Type A storage ports are not console ports.
+  Sources:
+  https://www.cisco.com/c/en/us/td/docs/routers/access/2900/hardware/installation/guide/Hardware_Installation_Guide/Overview.html
+  https://www.cisco.com/c/en/us/td/docs/routers/access/2900/hardware/installation/guide/Hardware_Installation_Guide/Internal_Modules.html
 console-ports:
   - name: con 0
     type: rj-45
+  - name: USB console
+    type: usb-mini-b
+  - name: AUX
+    type: rj-45
+    description: Asynchronous auxiliary serial management port.
 power-ports:
   - name: PS-1
     type: iec-60320-c14
-    allocated_draw: 70
-    maximum_draw: 340
+    description: AC-input chassis. Input draw depends on standard vs PoE PSU variant; identify installed PSU.
 interfaces:
   - name: GigabitEthernet0/0
     type: 1000base-t
+    description: Combo RJ-45/SFP for the same Gi0/0 interface; default copper medium.
   - name: GigabitEthernet0/1
     type: 1000base-t
   - name: GigabitEthernet0/2
     type: 1000base-t
+module-bays:
+  - name: EHWIC 0
+    position: EHWIC0
+  - name: EHWIC 1
+    position: EHWIC1
+  - name: EHWIC 2
+    position: EHWIC2
+  - name: EHWIC 3
+    position: EHWIC3
+  - name: SM 1
+    position: SM1
+  - name: SM 2
+    position: SM2
+  - name: ISM
+    position: ISM0
+  - name: PVDM3 0
+    position: PVDM0
+  - name: PVDM3 1
+    position: PVDM1
+  - name: PVDM3 2
+    position: PVDM2
+  - name: CompactFlash 0
+    position: CF0
+  - name: CompactFlash 1
+    position: CF1

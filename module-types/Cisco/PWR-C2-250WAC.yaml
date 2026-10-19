@@ -7,4 +7,10 @@ weight_unit: kg
 power-ports:
   - name: PS-{module}
     type: iec-60320-c14
-    maximum_draw: 250
+    maximum_draw: 277
+comments: |
+  Rated DC output capacity: 250 W; this is NOT maximum AC/DC electrical input.
+  Electrical input draw at Cisco-documented full-load reference point: 277 W. Cisco 3650 Table 1-3; 100 VAC reference.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/hardware/installation/guide/Cat3650hig_book/HIGSPEC.html

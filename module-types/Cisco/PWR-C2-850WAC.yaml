@@ -8,4 +8,10 @@ weight_unit: kg
 power-ports:
   - name: PSU{module}
     type: iec-60320-c16
-    maximum_draw: 850
+comments: |
+  Rated DC output capacity: 850 W; this is NOT maximum AC/DC electrical input.
+  Input power UNKNOWN: maximum_draw deliberately omitted. Cisco C9350 documents 850 W output, up to 10 A input and a 92% nominal PSU efficiency rating. These are not a certified maximum electrical input-watt figure. maximum_draw intentionally omitted.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/site/us/en/products/collateral/networking/switches/c9350-series-smart-switches/c9350-series-smart-switches-ds.html
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst3650/hardware/installation/guide/Cat3650hig_book/HIGSPEC.html

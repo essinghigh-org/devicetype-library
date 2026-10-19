@@ -2,10 +2,15 @@
 manufacturer: Cisco
 model: PWR-C1-1900WAC
 part_number: PWR-C1-1900WAC
-comments: 1900W AC Config 1 Power Supply / [Cisco Catalyst 9300 Series Switches Data Sheet](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html)
 weight: 1.5
 weight_unit: kg
 power-ports:
   - name: PS-{module}
     type: iec-60320-c22
-    maximum_draw: 1900
+comments: |
+  1900W AC Config 1 Power Supply / [Cisco Catalyst 9300 Series Switches Data Sheet](https://www.cisco.com/c/en/us/products/collateral/switches/catalyst-9300-series-switches/nb-06-cat9300-ser-data-sheet-cte-en.html)
+  Rated DC output capacity: 1900 W; this is NOT maximum AC/DC electrical input.
+  Input power UNKNOWN: maximum_draw deliberately omitted. Cisco 9300 tables establish PWR-C1-1900WAC-P, not the separate non-P identifier in this library. Do not transfer the Platinum PSU input rating.
+  maximum_draw refers to input consumption, NOT PoE budget, typical chassis draw or allocated draw.
+  Vendor sources:
+  https://www.cisco.com/c/en/us/td/docs/switches/lan/catalyst9300/hardware/install/b_c9300_hig/technical-specs.html
