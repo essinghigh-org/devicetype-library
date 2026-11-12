@@ -2,9 +2,4 @@
 manufacturer: Keysight
 model: IBPVHD-FAN
 part_number: IBPVHD-FAN
-comments: 'Replacement fan module, historical accessory number 991-1006. No external cable terminations.
-
-
-  Sources:
-
-  https://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/tap-and-ibypass-accessories.html'
+comments: "Replacement fan module, historical accessory number 991-1006. No external cable terminations.\n\nSources:\nhttps://www.keysight.com/zz/en/lib/resources/miscellaneous/nas-eol/tap-and-ibypass-accessories.html"
