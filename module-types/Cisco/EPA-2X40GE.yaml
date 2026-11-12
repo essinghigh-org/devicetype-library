@@ -3,15 +3,9 @@ manufacturer: Cisco
 model: EPA-2X40GE
 part_number: EPA-2X40GE
 interfaces:
-- name: FortyGigabitEthernet0/{module}/0
-  type: 40gbase-x-qsfpp
-- name: FortyGigabitEthernet0/{module}/1
-  type: 40gbase-x-qsfpp
-comments: 'Optional EPA for C9800-80 Bay 1. Fixed Bay 0 interfaces remain on the chassis. Validate controller software/optics
-  support and the installed PID before using this module.
-
-
-  Sources:
-
-
-  - [Catalyst 9800-80 supported hardware components](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/9800-80/installation-guide/b-wlc-ig-9800-80/supported-hardware-components.html)'
+  - name: FortyGigabitEthernet0/{module}/0
+    type: 40gbase-x-qsfpp
+  - name: FortyGigabitEthernet0/{module}/1
+    type: 40gbase-x-qsfpp
+comments: "Optional EPA for C9800-80 Bay 1. Fixed Bay 0 interfaces remain on the chassis. Validate controller software/optics support and the installed\
+  \ PID before using this module.\n\nSources:\n\n- [Catalyst 9800-80 supported hardware components](https://www.cisco.com/c/en/us/td/docs/wireless/controller/9800/9800-80/installation-guide/b-wlc-ig-9800-80/supported-hardware-components.html)"
