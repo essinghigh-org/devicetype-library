@@ -177,7 +177,7 @@ jobs:
         # Collection is intentionally pinned to the known test module for security:
         # bare `pytest` would collect/execute any test_*.py a PR adds (even under tests/).
         # Adding a new test module requires updating this invocation.
-        run: pytest tests/definitions_test.py --tb=short -v
+        run: pytest tests/definitions_test.py tests/upstream_sync_test.py --tb=short -v
       - name: Check for known data cache file change
         id: cache-change
         uses: tj-actions/changed-files@v47

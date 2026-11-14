@@ -45,16 +45,17 @@ jobs:
           import json
           import os
           import subprocess
+          import tempfile
           import urllib.error
           import urllib.parse
           import urllib.request
-          
+
           REPO = os.environ['REPOSITORY']
           BRANCH = 'automation/upstream-sync'
           BASE = 'master'
           MARKER = '<!-- essinghigh-weekly-upstream-sync -->'
-          
-          
+
+
           def api(method, path, payload=None):
               request = urllib.request.Request(
                   f"{os.environ['GITHUB_API_URL']}/repos/{REPO}/{path}",
@@ -66,8 +67,8 @@ jobs:
               )
               with urllib.request.urlopen(request, timeout=30) as response:
                   return json.load(response)
-          
-          
+
+
           def open_pr():
               # Paginate instead of relying on search-index freshness or the first page.
               found = []
@@ -86,37 +87,92 @@ jobs:
               if len(found) > 1:
                   raise RuntimeError('Multiple matching open PRs exist; review them manually. No new PR created.')
               return found[0] if found else None
-          
-          
+
+
           def git(*args):
               result = subprocess.run(['git', *args], text=True, capture_output=True)
               if result.returncode:
                   raise RuntimeError(f"git {args[0]} failed: {result.stderr}\n{result.stdout}")
               return result.stdout.strip()
-          
-          
+
+
           def ancestor(old, new):
               result = subprocess.run(['git', 'merge-base', '--is-ancestor', old, new])
               if result.returncode not in (0, 1):
                   raise RuntimeError('Could not compare Git ancestry.')
               return result.returncode == 0
-          
-          
+
+
           def remote_tip(remote, ref):
               value = git('ls-remote', '--refs', remote, ref)
               return value.split()[0] if value else ''
-          
-          
+
+
+          def resolve_generated_conflicts():
+              # Resolve data only, never run code from the merged revision. Anything
+              # except these generated indexes still requires a human conflict review.
+              allowed = {'tests/known-slugs.json', 'tests/known-modules.json',
+                         'tests/known-racks.json'}
+              entries = git('ls-files', '-u').splitlines()
+              stages = {}
+              for entry in entries:
+                  metadata, path = entry.split('\t', 1)
+                  mode, blob, stage = metadata.split()
+                  if path not in allowed or mode != '100644':
+                      return False
+                  stages.setdefault(path, {})[stage] = blob
+              if not stages or any(set(parts) != {'1', '2', '3'} for parts in stages.values()):
+                  return False
+              results = {}
+              for path, parts in stages.items():
+                  values = {}
+                  for stage, blob in parts.items():
+                      data = json.loads(git('cat-file', 'blob', blob))
+                      if not isinstance(data, list) or any(
+                          not isinstance(row, list) or len(row) != 2
+                          or not (isinstance(row[0], str) or row[0] is None)
+                          or not isinstance(row[1], str) for row in data
+                      ):
+                          raise RuntimeError(f'Invalid generated index: {path}')
+                      values[stage] = set(map(tuple, data))
+                      if len(values[stage]) != len(data):
+                          raise RuntimeError(f'Duplicate generated index entries: {path}')
+                  base, ours, theirs = (values[key] for key in ('1', '2', '3'))
+                  # Preserve additions from both sides and removals from either side.
+                  results[path] = (base & ours & theirs) | (ours - base) | (theirs - base)
+              for path, data in results.items():
+                  # Replace rather than follow a worktree symlink. Git modes above also
+                  # reject symlink/type conflicts. Keep the generator's canonical format.
+                  with tempfile.NamedTemporaryFile(mode='w', dir='tests', delete=False) as out:
+                      temporary = out.name
+                      json.dump(sorted(data, key=lambda row: tuple(str(v) for v in row)), out, indent=0)
+                      out.write('\n')
+                  try:
+                      os.chmod(temporary, 0o644)
+                      os.replace(temporary, path)
+                  finally:
+                      if os.path.exists(temporary):
+                          os.unlink(temporary)
+                  git('add', '--', path)
+              return True
+
+
           def merge(sha, label):
               try:
                   git('merge', '--no-edit', sha)
               except RuntimeError as error:
                   conflicts = git('diff', '--name-only', '--diff-filter=U')
+                  try:
+                      if resolve_generated_conflicts():
+                          git('commit', '--no-edit')
+                          return
+                  except Exception as resolution_error:
+                      error = resolution_error
                   subprocess.run(['git', 'merge', '--abort'], check=False)
                   raise RuntimeError(f'{label} could not be merged. Remote branch and existing PR are unchanged. '
                                      f'Conflicting files: {conflicts}. Git diagnostic: {error}') from None
-          
-          
+
+
           def main():
               # Only Git built-ins execute; never execute scripts/hooks from fetched revisions.
               git('config', 'core.hooksPath', '/dev/null')
@@ -178,17 +234,17 @@ jobs:
                   return  # Keep reviewer edits to the PR title/body unchanged.
               body = f'''{MARKER}
           Merge upstream `netbox-community/devicetype-library:master` into this fork.
-          
+
           This stable branch is updated by merging the latest fork master and upstream master.
           Future runs reuse this open PR and preserve fork changes and edits on the sync branch.
           The workflow never pushes to master or automatically merges this PR.
-          
+
           Review the changes and required validation before merging. PRs opened or updated
           by GITHUB_TOKEN may need a maintainer to select Approve workflows to run CI.
           This repository also supports a maintainer adding the `ci-approved` label to
           trigger validation of the current head. Review CI/script changes before approval.
           Keep this PR open to receive updates; merge only after reviewing successful checks.
-          
+
           Initial upstream commit: {upstream}
           Workflow run: {os.environ['RUN_URL']}
           '''
@@ -203,8 +259,8 @@ jobs:
                                          'check whether GitHub Actions may create pull requests, then rerun. '
                                          'No repository permissions or security settings were changed.') from error
               print(f"Upstream sync PR: {pr['html_url']}")
-          
-          
+
+
           if __name__ == '__main__':
               try:
                   main()
@@ -235,35 +291,35 @@ jobs:
           import os
           import urllib.error
           import urllib.request
-          
+
           repo = os.environ['REPOSITORY']
           api_url = os.environ['GITHUB_API_URL']
           run_url = os.environ['RUN_URL']
           marker = '<!-- essinghigh-weekly-upstream-rebase -->'
           body = f'''{marker}
           The weekly upstream PR sync needs attention.
-          
+
           - Repository: `{repo}`
           - Target: `master`; upstream: `netbox-community/devicetype-library:master`
           - Result: `{os.environ['SYNC_RESULT']}`
           - Latest run and diagnostic logs: {run_url}
-          
+
           The workflow merges into `automation/upstream-sync` and reuses its open PR.
           It never pushes to master, rebases, or automatically merges a PR. Conflicts stop
           before publishing, leaving the existing branch and PR intact. Concurrent branch
           updates are protected by a lease; no sync-branch commits are discarded.
-          
+
           Review the logs for the failing step. A failure after publishing may leave a safe
           updated branch awaiting PR creation; rerunning reuses it. For conflicts, resolve
           on the sync branch, then rerun. For PR permission failures, check the repository's
           Allow GitHub Actions to create and approve pull requests setting. This workflow
           does not change permissions or create credentials. Upstream workflow-file changes
           may require a maintainer to perform the branch update manually.
-          
+
           This single open issue is updated on subsequent failures. Close it after resolving the problem.
           '''
-          
-          
+
+
           def api(method, path, payload=None):
               request = urllib.request.Request(
                   f'{api_url}/repos/{repo}/{path}',
@@ -277,8 +333,8 @@ jobs:
               )
               with urllib.request.urlopen(request, timeout=30) as response:
                   return json.load(response)
-          
-          
+
+
           def main():
               page = 1
               existing = None
@@ -295,8 +351,8 @@ jobs:
               else:
                   result = api('POST', 'issues', {'title': 'Weekly upstream sync needs attention', 'body': body})
               print(f"Failure issue: {result['html_url']}")
-          
-          
+
+
           if __name__ == '__main__':
               try:
                   main()
